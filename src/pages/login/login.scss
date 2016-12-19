@@ -2,11 +2,7 @@ page-login {
     button {
         width: 80%;       
     }
-    
-    .bg {
-        background-color: #3F51B5;
-    }
-    
+     
     .loginForm {
         width: 80%;
         margin: auto;
@@ -22,4 +18,9 @@ page-login {
         text-align: center;
         
     }
+    ion-content {
+    background-color: map-get($colors, primary)!important;
 }
+}
+
+

@@ -7,6 +7,8 @@ import { TasksPage } from '../pages/tasks/tasks';
 import { CameraPage } from '../pages/camera/camera';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { TabsPage } from '../pages/tabs/tabs';
     TasksPage,
     CameraPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SignupPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,7 +33,9 @@ import { TabsPage } from '../pages/tabs/tabs';
     TasksPage,
     CameraPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginPage,
+    SignupPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })

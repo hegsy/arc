@@ -6,7 +6,7 @@
 -->
 <ion-content padding>
 
-<div class="bg">
+
     <div class="logo">
         <img width="300" src="../assets/img/arc_logo_white.png"/>
     </div>
@@ -26,10 +26,10 @@
     </ion-list>
 </div> 
 <div padding class="loginLinks">
-<button ion-button color="accent" round>Log In</button>  
+<button ion-button  [navPush]="homePage" color="accent" round>Log In</button>  
 <button ion-button color="light" clear>Forgot Password?</button>
 <button ion-button color="light" clear>Sign Up</button>
 </div>
-</div>
+
 </ion-content>
 
