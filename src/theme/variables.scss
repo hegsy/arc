@@ -12,7 +12,9 @@
 
 
 
-$font-size-base: 1.8rem;
+//$font-size-base: 1.8rem;
+
+$toolbar-background: #3F51B5;
 
 
 // Named Color Variables
@@ -23,11 +25,11 @@ $font-size-base: 1.8rem;
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
-$text-color: #212121;
+//$text-color: #212121;
 
 $colors: (
   primary:    #3F51B5,
-  secondary:  #FF4081,
+  accent:     #FF4081,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222
