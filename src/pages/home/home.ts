@@ -2,22 +2,27 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
+import { LoginPage } from '../../pages/login/login';
+import { AuthData } from '../../providers/auth-data';
 
-import { LoginPage } from '../login/login';
-import { SignupPage } from '../signup/signup';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
-    loginPage = LoginPage;
-    signupPage = SignupPage;
+
     
-  constructor(public navCtrl: NavController, public menuCtrl: MenuController) {
+  constructor(public nav: NavController, public menuCtrl: MenuController,public authData: AuthData) {
 
   }
 
+logOut(){
+  this.authData.logoutUser().then(() => {
+    this.nav.setRoot(LoginPage);
+  });
+}
 
 
 }
