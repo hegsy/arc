@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 import { LoginPage } from '../../pages/login/login';
-import { AuthData } from '../../providers/auth-data';
+import { ProfilePage } from '../profile/profile';
 
 
 @Component({
@@ -14,15 +14,13 @@ import { AuthData } from '../../providers/auth-data';
 export class HomePage {
 
     
-  constructor(public nav: NavController, public menuCtrl: MenuController,public authData: AuthData) {
-
+  constructor(public nav: NavController) {
+    this.nav = nav;
   }
 
-logOut(){
-  this.authData.logoutUser().then(() => {
-    this.nav.setRoot(LoginPage);
-  });
-}
+    goToProfile(){
+        this.nav.push(ProfilePage);
+    }
 
 
 }

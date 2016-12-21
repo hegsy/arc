@@ -5,14 +5,15 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import firebase from 'firebase';
 
 import { LoginPage } from '../pages/login/login';
-import { HomePage } from '../pages/home/home';
+
+import { TabsPage } from '../pages/tabs/tabs';
 
 @Component({
   template: '<ion-nav [root]="rootPage"></ion-nav>'
 })
 
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any = TabsPage;
 
   constructor(platform: Platform) {
   

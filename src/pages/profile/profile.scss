@@ -1,3 +1,31 @@
 page-profile {
+    ion-item ion-label {
+    margin: 0 !important;
+  }
+
+  ion-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  ion-list-header {
+    background-color: #ECECEC;
+    margin: 0;
+      padding: 10px 16px;
+  }
+
+  ion-item {
+    padding: 0;
+  }
+
+    
+    .item-inner {
+    border: none !important;
+    padding: 0;
+  }
+
+  .placeholder-profile {
+    color: #CCCCCC;
+  }
 
 }
