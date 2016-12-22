@@ -1,22 +1,42 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { PostDetailPage } from '../post-detail/post-detail';
+import { PostData } from '../../providers/post-data';
 
-/*
-  Generated class for the PostList page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-post-list',
   templateUrl: 'post-list.html'
 })
 export class PostListPage {
 
-  constructor(public navCtrl: NavController) {}
+    public postList: any;
 
-  ionViewDidLoad() {
-    console.log('Hello PostListPage Page');
+  constructor(public nav: NavController, public postData: PostData) {
+    this.nav = nav;
+    this.postData = postData;
+    
+    this.postData.getPostList().on('value', snapshot => {
+        let rawList = [];
+        snapshot.forEach( snap => {
+            rawList.push({
+                id:snap.key,
+                name: snap.val().name,
+                category: snap.val().category,
+                content: snap.val().content
+            });
+        });
+        this.postList = rawList;
+    });
+    
   }
+  
+  goToPostDetail(postId){
+  this.nav.push(PostDetailPage, {
+    postId: postId,
+  });
+}
+
+
 
 }

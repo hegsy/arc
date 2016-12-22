@@ -7,12 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>PostCreate</ion-title>
+    <ion-title>New Post</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+    <ion-item>
+    <ion-label stacked>Post Name</ion-label>
+    <ion-input [(ngModel)]="postName" type="text" placeholder="What's your post's name?"></ion-input>
+  </ion-item>
+    
+    <ion-item>
+    <ion-label stacked>Category</ion-label>
+    <ion-input [(ngModel)]="postCategory" type="text" placeholder="Choose a Category"></ion-input>
+  </ion-item>
+    
+    <ion-item>
+    <ion-label stacked>Content</ion-label>
+    <ion-input [(ngModel)]="postContent" type="text" placeholder="Write your post here..."></ion-input>
+  </ion-item>
+    
+      <button ion-button block (click)="createPost(postName, postCategory, postContent)">
+    Create Post
+  </button>
 </ion-content>

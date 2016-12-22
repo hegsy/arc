@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { PostData } from '../../providers/post-data';
 
 /*
   Generated class for the PostCreate page.
@@ -13,10 +14,17 @@ import { NavController } from 'ionic-angular';
 })
 export class PostCreatePage {
 
-  constructor(public navCtrl: NavController) {}
-
-  ionViewDidLoad() {
-    console.log('Hello PostCreatePage Page');
+  constructor(public nav: NavController, public postData: PostData,) {
+  
+    this.nav = nav;
+    this.postData = postData;
   }
+
+createPost(postName: string, postCategory: string, postContent: string) {
+    this.postData.createPost(postName, postCategory, postContent).then(() => {
+        this.nav.pop();
+        //to go back to TabsPage
+    });
+}
 
 }

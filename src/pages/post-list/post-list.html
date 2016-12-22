@@ -14,5 +14,11 @@
 
 
 <ion-content padding>
-
+    <ion-list>
+    <ion-item *ngFor="let post of postList" (click)="goToPostDetail(post.id)">
+      <h2>{{post?.name}}</h2>
+      <p>Category: <strong>${{post?.category}}</strong></p>
+      <p>Content: <strong>{{post?.content}}</strong></p>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -4,6 +4,9 @@ import { NavController } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 import { LoginPage } from '../../pages/login/login';
 import { ProfilePage } from '../profile/profile';
+import { PostListPage } from '../post-list/post-list';
+import { PostCreatePage } from '../post-create/post-create';
+
 
 
 @Component({
@@ -21,6 +24,5 @@ export class HomePage {
     goToProfile(){
         this.nav.push(ProfilePage);
     }
-
 
 }

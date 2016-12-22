@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+
+import firebase from 'firebase';
 
 /*
   Generated class for the PostData provider.
@@ -11,8 +11,32 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class PostData {
 
-  constructor(public http: Http) {
-    console.log('Hello PostData Provider');
+public currentUser: any;
+public postList: any;
+
+  constructor() {
+    this.currentUser = firebase.auth().currentUser.uid;
+    //getting id of logged in user
+    this.postList = firebase.database().ref('userProfile/' + this.currentUser + '/postList');
+    //getting database reference for userProfile/uid/postList to read and write from
+  }
+  
+  createPost(postName: string, postCategory: string, postContent: string ): any {
+    return this.postList.push({
+        name: postName,
+        category: postCategory,
+        content: postContent
+    }).then(newPost => {
+        this.postList.child(newPost.key).child('id').set(newPost.key);
+    });
+  }
+  
+  getPostList(): any {
+    return this.postList;
+  }
+  
+  getPostDetail(postId): any{
+    return this.postList.child(postId);
   }
 
 }

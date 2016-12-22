@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
+import { PostData } from '../../providers/post-data';
 
-/*
-  Generated class for the PostDetail page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-post-detail',
   templateUrl: 'post-detail.html'
 })
 export class PostDetailPage {
 
-  constructor(public navCtrl: NavController) {}
+    currentPost: any;
+    
 
-  ionViewDidLoad() {
-    console.log('Hello PostDetailPage Page');
+  constructor(public nav: NavController, public navParams: NavParams, public postData: PostData) {
+    this.navParams = navParams;
+    
+    this.postData.getPostDetail(this.navParams.get('postId'))
+  .on('value', (snapshot) => {
+    this.currentPost = snapshot.val();
+});
   }
+
 
 }

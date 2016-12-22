@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { PostListPage } from '../post-list/post-list';
+import { PostCreatePage } from '../post-create/post-create';
 
-/*
-  Generated class for the Posts page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-posts',
   templateUrl: 'posts.html'
 })
 export class PostsPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public nav: NavController) {}
 
   ionViewDidLoad() {
     console.log('Hello PostsPage Page');
   }
+  
+
+    goToCreate(){
+      this.nav.push(PostCreatePage);
+    }
+
+    goToList(){
+      this.nav.push(PostListPage);
+    }
 
 }
