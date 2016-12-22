@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthData } from '../../providers/auth-data';
 import { SignupPage } from '../signup/signup';
-import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 import { ResetPasswordPage } from '../reset-password/reset-password';
 
 /*
@@ -21,11 +21,11 @@ import { ResetPasswordPage } from '../reset-password/reset-password';
 })
 export class LoginPage {
 
-    public loginForm;
+ public loginForm;
     emailChanged: boolean = false;
-  passwordChanged: boolean = false;
-  submitAttempt: boolean = false;
-  loading: any;
+    passwordChanged: boolean = false;
+    submitAttempt: boolean = false;
+    loading: any;
 
   constructor(public nav: NavController, public authData: AuthData, public formBuilder: FormBuilder, public alertCtrl: AlertController, public loadingCtrl: LoadingController) {
   
@@ -35,9 +35,6 @@ export class LoginPage {
       });
   }
 
-  ionViewDidLoad() {
-    console.log('Hello LoginPage Page');
-  }
   
   elementChanged(input){
     let field = input.inputControl.name;
@@ -51,7 +48,7 @@ export class LoginPage {
     console.log(this.loginForm.value);
   } else {
     this.authData.loginUser(this.loginForm.value.email, this.loginForm.value.password).then( authData => {
-    this.nav.setRoot(HomePage);
+    this.nav.setRoot(TabsPage);
   }, error => {
     this.loading.dismiss().then( () => {
       let alert = this.alertCtrl.create({
