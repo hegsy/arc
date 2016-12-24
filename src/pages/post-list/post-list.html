@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>PostList</ion-title>
+    <ion-title>Posts</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,9 +16,37 @@
 <ion-content padding>
     <ion-list>
     <ion-item *ngFor="let post of postList" (click)="goToPostDetail(post.id)">
-      <h2>{{post?.name}}</h2>
-      <p>Category: <strong>${{post?.category}}</strong></p>
-      <p>Content: <strong>{{post?.content}}</strong></p>
+        <ion-avatar item-left>
+            <img src="../assets/img/girl_avatar.png"/>
+        </ion-avatar>
+        <h2>{{post?.name}}</h2>
+        <p>December 24, 2016</p>
+        <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
+        <p>{{post?.content}}</p>
+        
+        
+    <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear small color="accent">
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>12</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small color="accent">
+            <ion-icon name="text"></ion-icon>
+            <div>4</div>
+          </button>
+        </ion-col>
+        <ion-col center text-center>
+          <ion-note>
+            11h ago
+          </ion-note>
+        </ion-col>
+      </ion-row>
     </ion-item>
+        
+    
+        
   </ion-list>
 </ion-content>

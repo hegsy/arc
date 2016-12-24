@@ -15,9 +15,9 @@ export class PostDetailPage {
     this.navParams = navParams;
     
     this.postData.getPostDetail(this.navParams.get('postId'))
-  .on('value', (snapshot) => {
+    .on('value', (snapshot) => {
     this.currentPost = snapshot.val();
-});
+    });
   }
 
 

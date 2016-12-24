@@ -32,6 +32,10 @@ page-login {
     ion-content {
     background-color: map-get($colors, primary)!important;
 }
+    .login-background {
+        background: url("../assets/img/loginimg.png");
+        background-size: cover;
+    }
 }
 
 
