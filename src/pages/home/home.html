@@ -27,10 +27,11 @@
 
 <ion-content padding>
   <h2>Welcome to ARC!</h2>
-  <ion-card>
     
+  <ion-card>    
       <ion-card-header>
-        News and Events
+        <h2>News and Events</h2>
+        <button ion-button clear>View All</button>
       </ion-card-header>
       
       <ion-card-content>
@@ -60,4 +61,57 @@
     </button>
       </ion-list>
   </ion-card>
+    
+<ion-card>    
+      <ion-card-header>
+        <h2>Tasks</h2>
+        <button ion-button clear>View All</button>
+      </ion-card-header>
+      
+      <ion-card-content></ion-card-content>
+      
+      <ion-list>
+            <ion-icon item-left>
+                <img src="http://placehold.it/60x60">
+                <p>Add Friends</p>
+            </ion-icon>
+
+          <ion-icon item-left>
+                <img src="http://placehold.it/60x60">
+              <p>Add Friends</p>
+            </ion-icon>
+
+          <ion-icon item-left>
+                <img src="http://placehold.it/60x60">
+              <p>Add Friends</p>
+            </ion-icon>
+          
+      </ion-list>
+</ion-card>
+    
+<ion-card>    
+  <ion-card-header>
+    <h2>Recent Posts</h2>
+    <button ion-button clear>View All</button>
+  </ion-card-header>
+
+  <ion-card-content></ion-card-content>
+
+  <ion-list>
+      
+        <ion-item *ngFor="let post of postList" (click)="goToPostDetail(post.id)">
+            <ion-avatar item-left>
+                <img src="../assets/img/girl_avatar.png"/>
+            </ion-avatar>
+            <h2>{{post?.name}}</h2>
+            <p>December 24, 2016</p>
+            <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
+            <p>{{post?.content}}</p>
+
+        </ion-item>
+
+
+  </ion-list>
+</ion-card>
+    
 </ion-content>

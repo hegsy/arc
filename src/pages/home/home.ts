@@ -4,7 +4,7 @@ import { NavController, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { LoginPage } from '../login/login';
 
-
+import { PostData } from '../../providers/post-data';
 
 
 @Component({
@@ -13,16 +13,22 @@ import { LoginPage } from '../login/login';
 })
 
 export class HomePage {
-
+    public postList: any;
     pages: any[];
     
   constructor(public nav: NavController,public menu: MenuController) {
     this.nav = nav;
     this.menu = menu;
     
+    this.postList = [
+        { name : "First Post", category: "Social", content: "This is my first post on ARC" }
+    ]
+    
     this.pages = [
         {title: "Login", component: LoginPage }
     ];
+    
+ 
   }
 
     goToProfile(){
