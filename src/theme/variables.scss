@@ -10,12 +10,8 @@
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-
-
-//$font-size-base: 1.8rem;
-
-//$toolbar-background: #3F51B5;
-
+$toolbar-ios-title-text-color: #f4f4f4;
+$toolbar-md-title-text-color: #f4f4f4;
 
 
 // Named Color Variables
@@ -26,7 +22,6 @@
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
 
-//$text-color: #212121;
 
 $colors: (
   primary:    #3F51B5,

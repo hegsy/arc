@@ -6,12 +6,7 @@
   </ion-header>
   <ion-content>
     <ion-list>
-      <button ion-item [navPush]="loginPage">
-        Login
-      </button>
-      <button ion-item [navPush]="signupPage">
-        Signup
-      </button>
+        <button ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
     </ion-list>
   </ion-content>
 </ion-menu>
@@ -22,11 +17,7 @@
       <img src="../assets/img/arc_logo_white.png" width="50"  />
       
           <ion-buttons end>
-<!--
-      <button ion-button icon-only (click)="logOut()">
-        <ion-icon name="log-out"></ion-icon>
-        </button>
--->
+
               <button (click)="goToProfile()">
                 <ion-icon name="person"></ion-icon>
               </button>

@@ -3,7 +3,6 @@ import { NavController } from 'ionic-angular';
 import { PostDetailPage } from '../post-detail/post-detail';
 import { PostData } from '../../providers/post-data';
 
-
 @Component({
   selector: 'page-post-list',
   templateUrl: 'post-list.html'
@@ -28,6 +27,7 @@ export class PostListPage {
         });
         this.postList = rawList;
     });
+
     
   }
   
@@ -35,6 +35,13 @@ export class PostListPage {
   this.nav.push(PostDetailPage, {
     postId: postId,
   });
+}
+
+deletePost(postId) {
+    this.postData.deletePost(postId).then(() => {
+        this.nav.pop();
+        //to go back to TabsPage
+    });
 }
 
 

@@ -27,8 +27,13 @@ public postList: any;
         category: postCategory,
         content: postContent
     }).then(newPost => {
-        this.postList.child(newPost.key).child('id').set(newPost.key);
+
+    this.postList.child(newPost.key).child('id').set(newPost.key);
     });
+  }
+  
+deletePost(postId): any {
+    return this.postList.child(postId).remove();
   }
   
   getPostList(): any {

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
+import { LoginPage } from '../login/login';
 
 
 
@@ -13,13 +14,24 @@ import { ProfilePage } from '../profile/profile';
 
 export class HomePage {
 
+    pages: any[];
     
-  constructor(public nav: NavController) {
+  constructor(public nav: NavController,public menu: MenuController) {
     this.nav = nav;
+    this.menu = menu;
+    
+    this.pages = [
+        {title: "Login", component: LoginPage }
+    ];
   }
 
     goToProfile(){
         this.nav.push(ProfilePage);
+    }
+    
+    openPage(page) {
+        this.menu.close();
+        this.nav.push(page.component);
     }
 
 }
