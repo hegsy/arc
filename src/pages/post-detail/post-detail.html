@@ -7,16 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>PostDetail</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding fullscreen class="openPostBackground">
     <h2>
     {{currentPost.name}}
     </h2>
     <p>Category: <strong>{{currentPost.category}}</strong></p>
-    <p>Content: <strong>{{currentPost.content}}</strong></p>
+    
+       <img src="http://placehold.it/100x100">
+    
+    <p>Date: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    
+    <p><strong>{{currentPost.content}}</strong></p>
+    
+    
 </ion-content>

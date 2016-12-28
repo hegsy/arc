@@ -21,7 +21,6 @@
                 <img src="../assets/img/girl_avatar.png"/>
             </ion-avatar>
             <h2>{{post?.name}}</h2>
-            <p>December 24, 2016</p>
             <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
             <p>{{post?.content}}</p>
 
@@ -40,13 +39,16 @@
                 </ion-col>
                 <ion-col center text-center>
                   <ion-note>
-                    11h ago
+                    {{post.dateCreated | date: 'shortTime' }}
                   </ion-note>
                 </ion-col>
             </ion-row>
         </ion-item>
             <ion-item-options>
-                <button danger (click)="deletePost(post.id)">
+                <button ion-button icon-only>
+                    <ion-icon name="star"></ion-icon>
+                </button>
+                <button ion-button icon-only (click)="deletePost(post.id)">
                     <ion-icon name="trash"></ion-icon>
                 </button>
             </ion-item-options>

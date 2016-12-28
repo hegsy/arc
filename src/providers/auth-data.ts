@@ -33,4 +33,5 @@ export class AuthData {
   logoutUser(): any {
   return this.fireAuth.signOut();
   }
+  
 }

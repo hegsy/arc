@@ -4,8 +4,6 @@ import { NavController, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { LoginPage } from '../login/login';
 
-import { PostData } from '../../providers/post-data';
-
 
 @Component({
   selector: 'page-home',

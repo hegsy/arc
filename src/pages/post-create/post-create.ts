@@ -14,8 +14,8 @@ export class PostCreatePage {
     this.postData = postData;
   }
 
-createPost(postName: string, postCategory: string, postContent: string) {
-    this.postData.createPost(postName, postCategory, postContent).then(() => {
+createPost(postName: string, postCategory: string, dateCreated: string, postContent: string) {
+    this.postData.createPost(postName, postCategory, dateCreated, postContent).then(() => {
         this.nav.pop();
         //to go back to TabsPage
     });
