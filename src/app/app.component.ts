@@ -15,7 +15,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 export class MyApp {
   rootPage: any = TabsPage;
 
+    
+    
   constructor(platform: Platform) {
+  
   
       firebase.initializeApp({
         apiKey: "AIzaSyCVRDRlyn7sq-wQZxJ7gv3Fltc8GTK8X3M",
@@ -32,10 +35,13 @@ export class MyApp {
     });
     
     platform.ready().then(() => {
+    
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
+      StatusBar.overlaysWebView(false); 
+      StatusBar.backgroundColorByHexString('#ffffff');
     });
     
 

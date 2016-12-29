@@ -13,16 +13,36 @@
 </ion-header>
 
 
-<ion-content padding class="profile">
-    <ion-list>
-    <ion-list-header>
-      Personal Information
-    </ion-list-header>
-
-        <img src="http://placehold.it/100x100">
+<ion-content class="profile">
+    
+    <ion-list>  
+    <ion-item>
+        <ion-grid>
+            <ion-row>
+              <ion-col baseline offset-10>
+              <button ion-button>
+                  <ion-icon name="person"></ion-icon>
+                <ion-badge>260</ion-badge>
+            </button>
+              </ion-col> 
+              
+              <ion-col>
+              <img src="http://placehold.it/100x100"/></ion-col> 
+              
+              <ion-col baseline offset-10>
+                <button ion-button>
+                  <ion-icon name="bookmark"></ion-icon>
+                    <ion-badge>260</ion-badge>
+              </button>
+              </ion-col> 
+          </ion-row>
+        </ion-grid>
         
+    </ion-item>    
+    
     <ion-item (click)="updateName()">
       <ion-grid>
+          
         <ion-row>
           <ion-col width-50>
             Name

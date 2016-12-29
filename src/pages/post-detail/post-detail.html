@@ -18,12 +18,9 @@
     {{currentPost.name}}
     </h2>
     <p>Category: <strong>{{currentPost.category}}</strong></p>
-    
-       <img src="http://placehold.it/100x100">
-    
-    <p>Date: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
-    
-    <p><strong>{{currentPost.content}}</strong></p>
+    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    <img src="http://placehold.it/100x100">
+    <p class="postContent">{{currentPost.content}}</p>
     
     
 </ion-content>

@@ -9,18 +9,63 @@
   <ion-navbar>
     <button start ion-button icon-only menuToggle><ion-icon name="menu"></ion-icon></button>
     <ion-title>Posts</ion-title>
-      <button end ion-button icon-only menuToggle><ion-icon name="create"></ion-icon></button>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="goToCreate()"><ion-icon name="create"></ion-icon></button>
+          </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <button ion-button block color="primary" (click)="goToCreate()">
-  Create a new Post
-</button>
+    
+    <ion-list>
+        <ion-list-header>
+            Popular Categories
+        </ion-list-header>
+        <ion-item>
+            <ion-thumbnail item-left>
+                <img src="http://placehold.it/80x80"/>
+            </ion-thumbnail>
+            <ion-thumbnail item-left>
+                <img src="http://placehold.it/80x80"/>
+            </ion-thumbnail>
+            <ion-thumbnail item-left>
+                <img src="http://placehold.it/80x80"/>
+            </ion-thumbnail>
+            <ion-thumbnail item-left>
+                <img src="http://placehold.it/80x80"/>
+            </ion-thumbnail>
+            <ion-thumbnail item-left>
+                <img src="http://placehold.it/80x80"/>
+            </ion-thumbnail>
+            <ion-thumbnail item-left>
+                <img src="http://placehold.it/80x80"/>
+            </ion-thumbnail>
+        </ion-item>
+    </ion-list>
+    
+    <ion-list>
+        <ion-list-header>
+            Popular Tags
+        </ion-list-header>
+        
+        <ion-item>
+            <ion-icon name="person" item-left></ion-icon>Social         
+        </ion-item>
+        
+        <ion-item>
+            <ion-icon name="person" item-left></ion-icon>Social         
+        </ion-item>
+        
+        <ion-item>
+            <ion-icon name="person" item-left></ion-icon>Social         
+        </ion-item>
+        
+    </ion-list>
 
-<button ion-button block color="primary" (click)="goToList()">
-  See your posts
-</button>
+    <button ion-button block color="accent" (click)="goToList()">
+      View All Posts
+    </button>
+    
 </ion-content>

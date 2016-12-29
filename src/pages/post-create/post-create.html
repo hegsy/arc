@@ -21,12 +21,18 @@
     
     <ion-item>
     <ion-label stacked>Category</ion-label>
-    <ion-input [(ngModel)]="postCategory" type="text" placeholder="Choose a Category"></ion-input>
+    <ion-select [(ngModel)]="postCategory" placeholder="Choose a Category">
+        <ion-option>Social</ion-option>
+        <ion-option>Find the Code</ion-option>
+        <ion-option>Connect</ion-option>
+        <ion-option>Clubs and Societies</ion-option>
+        <ion-option>Food and Drink</ion-option>
+    </ion-select>
   </ion-item>
     
     <ion-item>
     <ion-label stacked>Content</ion-label>
-    <ion-input [(ngModel)]="postContent" type="text" placeholder="Write your post here..."></ion-input>
+    <ion-textarea [(ngModel)]="postContent" type="text" placeholder="Write your post here..."></ion-textarea>
   </ion-item>
     
       <button ion-button block (click)="createPost(postName, postCategory, dateCreated, postContent)">
