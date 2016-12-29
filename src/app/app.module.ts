@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 //Import Pages 
 
 import { ProfilePage } from '../pages/profile/profile';
+import { EditProfilePage } from '../pages/edit-profile/edit-profile';
 import { PostsPage } from '../pages/posts/posts';
 import { TasksPage } from '../pages/tasks/tasks';
 import { CameraPage } from '../pages/camera/camera';
@@ -27,6 +28,7 @@ import { ProfileData } from '../providers/profile-data';
   declarations: [
     MyApp,
     ProfilePage,
+    EditProfilePage,
     PostsPage,
     TasksPage,
     CameraPage,
@@ -46,6 +48,7 @@ import { ProfileData } from '../providers/profile-data';
   entryComponents: [
     MyApp,
     ProfilePage,
+    EditProfilePage,
     PostsPage,
     TasksPage,
     CameraPage,

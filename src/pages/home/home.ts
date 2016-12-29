@@ -4,6 +4,7 @@ import { NavController, MenuController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { LoginPage } from '../login/login';
 
+import { AuthData } from '../../providers/auth-data';
 
 @Component({
   selector: 'page-home',
@@ -14,7 +15,7 @@ export class HomePage {
     public postList: any;
     pages: any[];
     
-  constructor(public nav: NavController,public menu: MenuController) {
+  constructor(public nav: NavController,public menu: MenuController, public authData: AuthData) {
     this.nav = nav;
     this.menu = menu;
     
@@ -37,5 +38,11 @@ export class HomePage {
         this.menu.close();
         this.nav.push(page.component);
     }
+    
+      logOut(){
+    this.authData.logoutUser().then(() => {
+      this.nav.setRoot(LoginPage);
+    });
+  }
 
 }
