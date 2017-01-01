@@ -17,10 +17,14 @@
     <h2>
     {{currentPost.name}}
     </h2>
-    <p>Category: <strong>{{currentPost.category}}</strong></p>
+    <p>Category: {{currentPost.category}}</p>
     <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
-    <img src="http://placehold.it/100x100">
+    
+    <ion-icon name="person" *ngIf="currentPost.category == 'Social'"></ion-icon>
+    <!--other category icons go here -->
+    
     <p class="postContent">{{currentPost.content}}</p>
     
     
 </ion-content>
+
