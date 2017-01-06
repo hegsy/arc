@@ -21,8 +21,16 @@
     <p>{{currentPost.tag}}</p>
     <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
     
-    <ion-icon name="person" *ngIf="currentPost.category == 'Social'"></ion-icon>
+    <img *ngIf="currentPost.category == 'Social'" src="../assets/icon/cat_icon_social.png">
+    <img *ngIf="currentPost.category == 'Information'" src="../assets/icon/cat_icon_information_black.png">
+    <img *ngIf="currentPost.category == 'Campus'" src="../assets/icon/cat_icon_campus_black.png">
+    <img *ngIf="currentPost.category == 'Explore'" src="../assets/icon/cat_icon_explore_black.png">
+    <img *ngIf="currentPost.category == 'Event'" src="../assets/icon/cat_icon_event_black.png">
+    <img *ngIf="currentPost.category == 'News'" src="../assets/icon/cat_icon_news_black.png">
+    <img *ngIf="currentPost.category == 'Miscellaneous'" src="../assets/icon/cat_icon_misc_black.png">
+    <img *ngIf="currentPost.category == 'Clubs'" src="../assets/icon/cat_icon_clubs_black.png">
     <!--other category icons go here -->
+   
     
     <p class="postContent">{{currentPost.content}}</p>
     
