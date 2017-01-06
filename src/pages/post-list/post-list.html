@@ -22,6 +22,7 @@
             </ion-avatar>
             <h2>{{post?.name}}</h2>
             <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
+            <p>{{post?.tag}}</p>
             <p>{{post?.content}}</p>
 
             <ion-row>
@@ -39,7 +40,7 @@
                 </ion-col>
                 <ion-col center text-center>
                   <ion-note>
-                    {{post.dateCreated | date: 'shortTime' }}
+                    {{post?.dateCreated | date: 'shortTime' }}
                   </ion-note>
                 </ion-col>
             </ion-row>

@@ -23,6 +23,7 @@ export class PostListPage {
                 name: snap.val().name,
                 category: snap.val().category,
                 dateCreated: snap.val().dateCreated,
+                tag: snap.val().tag,
                 content: snap.val().content
             });
         });

@@ -4,12 +4,7 @@ import 'rxjs/add/operator/map';
 
 import firebase from 'firebase';
 
-/*
-  Generated class for the ProfileData provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class ProfileData {
 
@@ -50,6 +45,24 @@ updateName(firstName: string, lastName: string): any {
       console.log("Password Changed");
     }, (error) => {
       console.log(error);
+    });
+  }
+  
+  updateCollege(college: string): any {
+    return this.userProfile.child(this.currentUser.uid).update({
+      college: college     
+    });
+  }
+  
+    updateCourse(course: string): any {
+    return this.userProfile.child(this.currentUser.uid).update({
+      course: course     
+    });
+  }
+  
+      updateYear(year: string): any {
+    return this.userProfile.child(this.currentUser.uid).update({
+      year: year     
     });
   }
 

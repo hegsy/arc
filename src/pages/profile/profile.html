@@ -39,19 +39,19 @@
     
 <ion-grid>
     <ion-row>       
-        <ion-col>
-            <h4>Anne Hegarty</h4>
+        <ion-col *ngIf="userProfile?.firstName">
+            <h4>{{userProfile?.firstName}}</h4>
         </ion-col>
     </ion-row>
     
     <ion-row>
-        <ion-col>
-            <span>Multimedia</span>
+        <ion-col *ngIf="userProfile?.course">
+            {{userProfile?.course}}
         </ion-col>
 
 
-        <ion-col>
-            <span>Year 4</span>
+        <ion-col *ngIf="userProfile?.year">
+            <span>Year {{userProfile?.year}}</span>
         </ion-col>
     </ion-row>
 </ion-grid>
@@ -64,14 +64,15 @@
        My Posts
         </ion-list-header>
         
-        <ion-item-sliding>
-        <ion-item>
+        <ion-item-sliding *ngFor="let post of postList">
+        <ion-item  (click)="goToPostDetail(post.id)">
             <ion-avatar item-left>
                 <img src="../assets/img/girl_avatar.png"/>
             </ion-avatar>
-            <h3>Profile Post</h3>
-            <p><strong>Category:</strong>&nbsp;Test</p>
-            <p>First post on my profile</p>
+            <h3>{{post?.name}}</h3>
+            <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
+            <p>{{post?.tag}}</p>
+            <p>{{post?.content}}</p>
 
             <ion-row>
                 <ion-col>
@@ -102,45 +103,6 @@
                 </button>
             </ion-item-options>
         </ion-item-sliding>    
-
-        <ion-item-sliding>
-        <ion-item>
-            <ion-avatar item-left>
-                <img src="../assets/img/girl_avatar.png"/>
-            </ion-avatar>
-            <h3>Profile Post</h3>
-            <p><strong>Category:</strong>&nbsp;Test</p>
-            <p>First post on my profile</p>
-
-            <ion-row>
-                <ion-col>
-                  <button ion-button icon-left clear small color="accent">
-                    <ion-icon name="thumbs-up"></ion-icon>
-                    <div>12</div>
-                  </button>
-                </ion-col>
-                <ion-col>
-                  <button ion-button icon-left clear small color="accent">
-                    <ion-icon name="text"></ion-icon>
-                    <div>4</div>
-                  </button>
-                </ion-col>
-                <ion-col center text-center>
-                  <ion-note>
-                    Dec 29
-                  </ion-note>
-                </ion-col>
-            </ion-row>
-        </ion-item>
-            <ion-item-options>
-                <button ion-button icon-only>
-                    <ion-icon name="create"></ion-icon>
-                </button>
-                <button ion-button icon-only>
-                    <ion-icon name="trash"></ion-icon>
-                </button>
-            </ion-item-options>
-        </ion-item-sliding> 
     </ion-list>
 
 

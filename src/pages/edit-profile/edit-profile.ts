@@ -97,7 +97,85 @@ export class EditProfilePage {
     });
     alert.present();
   }
+  
+    updateCollege(){
+    let alert = this.alertCtrl.create({
+      message: "Choose Your College",
+      inputs: [
+        {
+          name: 'college',
+          placeholder: 'Name Of College',
+          value: this.userProfile.college
+        },        
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            this.profileData.updateCollege(data.college);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+  
+      updateCourse(){
+    let alert = this.alertCtrl.create({
+      message: "Choose Your Course",
+      inputs: [
+        {
+          name: 'course',
+          placeholder: 'Your Course',
+          value: this.userProfile.course
+        },        
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            this.profileData.updateCourse(data.course);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+  
+        updateYear(){
+    let alert = this.alertCtrl.create({
+      message: "Current Year",
+      inputs: [
+        {
+          name: 'year',
+          placeholder: 'What year are you in?',
+          value: this.userProfile.year
+        },        
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            this.profileData.updateYear(data.year);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+  
 }
+
+
     
 
 

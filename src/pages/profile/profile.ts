@@ -1,7 +1,12 @@
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { Component } from '@angular/core';
 
 import { EditProfilePage } from '../edit-profile/edit-profile';
+import { PostDetailPage } from '../post-detail/post-detail';
+
+import { ProfileData } from '../../providers/profile-data';
+import { AuthData } from '../../providers/auth-data';
+import { PostData } from '../../providers/post-data';
 
 @Component({
   selector: 'page-profile',
@@ -10,10 +15,47 @@ import { EditProfilePage } from '../edit-profile/edit-profile';
 
 export class ProfilePage {
 
+    public userProfile: any;
 
-    constructor(public nav: NavController) {
+    public postList: any;
+    
 
-    }
+  constructor(public nav: NavController, public profileData: ProfileData,
+    public authData: AuthData, public postData: PostData) {
+    this.profileData.getUserProfile().on('value', (data) => {
+      this.userProfile = data.val();
+    });
+    
+    this.postData = postData;
+    
+    this.postData.getPostList().on('value', snapshot => {
+        let rawList = [];
+        snapshot.forEach( snap => {
+            rawList.push({
+                id:snap.key,
+                name: snap.val().name,
+                category: snap.val().category,
+                dateCreated: snap.val().dateCreated,
+                tag: snap.val().tag,
+                content: snap.val().content
+            });
+        });
+        this.postList = rawList;
+    });
+  }
+  
+    goToPostDetail(postId){
+  this.nav.push(PostDetailPage, {
+    postId: postId,
+  });
+}
+
+deletePost(postId) {
+    this.postData.deletePost(postId).then(() => {
+        this.nav.pop();
+        //to go back to TabsPage
+    });
+}
     
     goToEdit(){
       this.nav.push(EditProfilePage);

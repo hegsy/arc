@@ -18,6 +18,7 @@
     {{currentPost.name}}
     </h2>
     <p>Category: {{currentPost.category}}</p>
+    <p>{{currentPost.tag}}</p>
     <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
     
     <ion-icon name="person" *ngIf="currentPost.category == 'Social'"></ion-icon>

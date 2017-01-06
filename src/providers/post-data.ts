@@ -21,11 +21,12 @@ public postList: any;
     //getting database reference for userProfile/uid/postList to read and write from
   }
   
-  createPost(postName: string, postCategory: string, dateCreated: string, postContent: string ): any {
+  createPost(postName: string, postCategory: string, dateCreated: string, postTag: string, postContent: string ): any {
     return this.postList.push({
         name: postName,
         category: postCategory,
         dateCreated: new Date().toString(),
+        tag: postTag,
         content: postContent
     }).then(newPost => {
 
