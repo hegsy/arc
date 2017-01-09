@@ -1,6 +1,31 @@
 page-tasks {
 
     ion-row {
-        margin-bottom: 10%;
+        //margin-bottom: 10%;
+    }
+    
+    p {
+        text-align: center;
+    }
+    
+    img {
+        padding-bottom: 10px;
+    }
+    
+    .reportcardicon {
+        margin-top: 8px;
+    }
+    
+    .card {
+        background: #fff;
+    }
+    .card-ios {
+        background: #fff;
+    }
+    
+    ion-badge {
+
+        position: absolute;
+        
     }
 }

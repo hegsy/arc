@@ -25,7 +25,7 @@
               </ion-col> 
               
             <ion-col width-50>
-                <img src="../assets/img/girl_avatar.png"/>
+                <img class="profilepic" src="../assets/img/girl_avatar.png"/>
             </ion-col> 
               
               <ion-col baseline>
@@ -35,34 +35,30 @@
               </button>
               </ion-col> 
           </ion-row>
+
+            <ion-row>       
+                <ion-col *ngIf="userProfile?.firstName">
+                    <span class="username">{{userProfile?.firstName}}</span>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col text-uppercase *ngIf="userProfile?.course">
+                    <span>{{userProfile?.course}}</span>
+                </ion-col>
+
+
+                <ion-col text-uppercase *ngIf="userProfile?.year">
+                    <span>Year {{userProfile?.year}}</span>
+                </ion-col>
+            </ion-row>
         </ion-grid>
-    
-<ion-grid>
-    <ion-row>       
-        <ion-col *ngIf="userProfile?.firstName">
-            <h4>{{userProfile?.firstName}}</h4>
-        </ion-col>
-    </ion-row>
-    
-    <ion-row>
-        <ion-col *ngIf="userProfile?.course">
-            {{userProfile?.course}}
-        </ion-col>
-
-
-        <ion-col *ngIf="userProfile?.year">
-            <span>Year {{userProfile?.year}}</span>
-        </ion-col>
-    </ion-row>
-</ion-grid>
-
-    
-    
-    
+  
     <ion-list>
-        <ion-list-header>
+        <ion-item-group>
+        <ion-item-divider>
        My Posts
-        </ion-list-header>
+        </ion-item-divider>
         
         <ion-item-sliding *ngFor="let post of postList">
         <ion-item  (click)="goToPostDetail(post.id)">
@@ -102,7 +98,8 @@
                     <ion-icon name="trash"></ion-icon>
                 </button>
             </ion-item-options>
-        </ion-item-sliding>    
+        </ion-item-sliding>  
+            </ion-item-group>
     </ion-list>
 
 

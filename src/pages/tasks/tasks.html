@@ -7,53 +7,81 @@
 <ion-header>
 
   <ion-navbar>
-    <button start ion-button icon-only menuToggle><ion-icon name="menu"></ion-icon></button>
-    <ion-title>Tasks</ion-title>
-      <button end ion-button icon-only menuToggle><ion-img width="24" src="assets/icon/hat.png"></ion-img></button>
+        <button start ion-button icon-only menuToggle><ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Tasks</ion-title>
+    <ion-buttons end>
+        <button ion-button>
+        <ion-img class="reportcardicon" src="assets/icon/hat_icon.png"></ion-img>
+        </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-    <ion-list>  
-        <ion-item>
+<ion-content>
             <ion-grid>
                 <ion-row>
-                    <ion-col offset-10>
-                        <img src="../assets/icon/task_icon_findthecode.png">
+                    <ion-col>
+                        <ion-card>                           
+                            <ion-card-content>
+                                 <ion-badge color="accent">5</ion-badge>
+                                <img src="../assets/icon/task_icon_findthecode.png">
+                               <p>Code</p> 
+                            </ion-card-content>
+                        </ion-card>
                     </ion-col>
                     <ion-col>
-                        <img src="../assets/icon/task_icon_clubs.png">
+                        <ion-card>                           
+                            <ion-card-content>
+                                <ion-badge color="accent">4</ion-badge>
+                                <img src="../assets/icon/task_icon_addfriends.png">
+                               <p>Social</p> 
+                            </ion-card-content>
+                        </ion-card>
                     </ion-col>
-                    <ion-col>
-                        <img src="../assets/icon/task_icon_addfriends.png">
-                    </ion-col>
-                </ion-row>
+                    </ion-row>
                 <ion-row>
-                    <ion-col offset-10>
-                        <img src="../assets/icon/task_icon_explore.png">
+                    <ion-col>
+                        <ion-card>                           
+                            <ion-card-content>
+                                <ion-badge color="accent">3</ion-badge>
+                                <img src="../assets/icon/task_icon_clubs.png">
+                               <p>Clubs</p> 
+                            </ion-card-content>
+                        </ion-card>
                     </ion-col>
                     <ion-col>
-                        <img src="../assets/icon/task_icon_foodanddrink.png">
+                        <ion-card>                           
+                            <ion-card-content>
+                                <ion-badge color="accent">4</ion-badge>
+                                <img src="../assets/icon/task_icon_explore.png">
+                               <p>Explore</p> 
+                            </ion-card-content>
+                        </ion-card>
                     </ion-col>
-                    <ion-col>
-                        <img src="../assets/icon/task_icon_findthecode.png">
-                    </ion-col>
-                </ion-row>
+                    </ion-row>
                 <ion-row>
-                    <ion-col offset-10>
-                        <img src="../assets/icon/task_icon_explore.png">
+                    <ion-col>
+                        <ion-card>                           
+                            <ion-card-content>
+                                <ion-badge color="accent">5</ion-badge>
+                                <img src="../assets/icon/task_icon_foodanddrink.png">
+                               <p>Eat</p> 
+                            </ion-card-content>
+                        </ion-card>
                     </ion-col>
                     <ion-col>
-                        <img src="../assets/icon/task_icon_findthecode.png">
+                        <ion-card>                           
+                            <ion-card-content>
+                                <ion-badge color="accent">7</ion-badge>
+                                <img src="../assets/icon/task_icon_findthecode.png">
+                               <p>Campus</p> 
+                            </ion-card-content>
+                        </ion-card>
                     </ion-col>
-                    <ion-col>
-                        <img src="../assets/icon/task_icon_foodanddrink.png">
-                    </ion-col>
-                </ion-row>
+                </ion-row>               
             </ion-grid>
-        </ion-item>
-    </ion-list>
           
 </ion-content>

@@ -24,86 +24,83 @@
             <ion-icon name="menu"></ion-icon>
             </button>
         
-        <img src="../assets/img/arc_logo_white.png" width="40"/>
-
-<!--
-        <ion-buttons end>
-            <button (click)="goToProfile()">
-            <ion-icon name="person"></ion-icon>
-            </button>
-        </ion-buttons>
--->
+        <img class="logo_header" src="../assets/img/arc_logo_white.png" width="40"/>
       
     </ion-navbar>   
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to ARC!</h2>
-    
-    <ion-card>    
-        <ion-card-header>
-        <h2>News and Events</h2>       
-        </ion-card-header>
-      
-        <ion-card-content>
-        Recent News from your Friends
-            <ion-list no-lines>
-                <button ion-item>
-                <ion-icon item-left name="calendar">
-                </ion-icon> Post from Event Category
+<ion-content>
+    <ion-list>       
+        <ion-item-group>
+            <ion-item-divider>
+                <h4>News and Events</h4>
+                <button class="viewall" ion-button icon-only clear item-right>
+                    <ion-icon name="arrow-dropright"></ion-icon>
                 </button>
-            </ion-list>
-        </ion-card-content>     
-        <button ion-button clear>View All</button>
-    </ion-card>
+            </ion-item-divider>
+            <ion-item>
+                <button ion-item>
+                    <ion-icon item-left name="calendar">
+                    </ion-icon>
+                    Event Post
+                    <p>Category</p>
+                    <p>Tag</p> 
+                    <ion-note item-right>Date</ion-note>
+                </button>
+            </ion-item>
+        </ion-item-group>
+    </ion-list>
+
+    <ion-list>
+        <ion-item-group>
+            <ion-item-divider>
+                <h4>Tasks</h4>
+                <button class="viewall" ion-button icon-only clear item-right>
+                        <ion-icon name="arrow-dropright"></ion-icon>
+                </button>
+            </ion-item-divider>
+            
+            <ion-item>
+            <ion-grid> 
+                <ion-row>
+                    <ion-col>
+                        <img src="../assets/icon/task_icon_addfriends.png">
+                        <p class="icontext">Add Friends</p>
+                    </ion-col>
+                    <ion-col>                   
+                        <img src="../assets/icon/task_icon_clubs.png">
+                        <p class="icontext">Clubs</p>
+                    </ion-col>
+                    <ion-col>
+                        <img src="../assets/icon/task_icon_explore.png">
+                        <p class="icontext">Explore</p>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>   
+            </ion-item>
+        </ion-item-group>  
+    </ion-list>
     
-    <ion-card>    
-        <ion-card-header>
-            <h2>Tasks</h2>
-        </ion-card-header>
 
-        <ion-card-content>
-            <ion-list no-lines>
-                <ion-item>
-                    <ion-icon item-left>
-                    <img src="../assets/icon/task_icon_addfriends.png">
-                    <p class="icontext">Add Friends</p>
-                    </ion-icon>
-
-                    <ion-icon item-left>
-                    <img src="../assets/icon/task_icon_clubs.png">
-                    <p class="icontext">Clubs & Societies</p>
-                    </ion-icon>
-
-                    <ion-icon item-left>
-                    <img src="../assets/icon/task_icon_explore.png">
-                    <p class="icontext">Explore</p>
-                    </ion-icon>
-                </ion-item>
-            </ion-list>       
-        </ion-card-content>
-        <button ion-button clear>View All</button>
-    </ion-card>
-    
-    <ion-card>    
-        <ion-card-header>
-            <h2>Recent Posts</h2>
-        </ion-card-header>
-
-        <ion-card-content>
-            <ion-list>    
-                <ion-item *ngFor="let post of postList" (click)="goToPostDetail(post.id)">
-                    <ion-avatar item-left>
-                        <img src="../assets/img/girl_avatar.png"/>
-                    </ion-avatar>
-                    <h2>{{post?.name}}</h2>
-                    <p>December 24, 2016</p>
-                    <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
-                    <p>{{post?.content}}</p>
-                </ion-item>
-            </ion-list>
-        </ion-card-content>
-
-        <button ion-button clear item-right>View All</button>
-    </ion-card>  
+    <ion-list>
+        <ion-item-group>
+            <ion-item-divider>
+                <h4>Recent Posts</h4>
+                <button class="viewall" ion-button icon-only clear item-right>
+                        <ion-icon name="arrow-dropright"></ion-icon>
+                </button>
+            </ion-item-divider>
+        
+            <ion-item *ngFor="let post of postList" (click)="goToPostDetail(post.id)">
+                        <ion-avatar item-left>
+                            <img src="../assets/img/girl_avatar.png"/>
+                        </ion-avatar>
+                        <h2>{{post?.name}}</h2>
+                        <p>December 24, 2016</p>
+                        <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
+                        <p>{{post?.content}}</p>
+            </ion-item>
+        
+        </ion-item-group>
+    </ion-list>
 </ion-content>

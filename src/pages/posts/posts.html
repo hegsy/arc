@@ -10,8 +10,9 @@
     <button start ion-button icon-only menuToggle><ion-icon name="menu"></ion-icon></button>
     <ion-title>Posts</ion-title>
       <ion-buttons end>
-      <button ion-button icon-only (click)="goToCreate()"><ion-icon name="create"></ion-icon></button>
-          </ion-buttons>
+      <button ion-button icon-only (click)="goToCreate()"><ion-icon name="create"></ion-icon>
+          </button>
+        </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -20,9 +21,10 @@
 <ion-content>
     
     <ion-list>
-        <ion-list-header>
+        <ion-item-group>
+        <ion-item-divider>
             Popular Categories
-        </ion-list-header>
+        </ion-item-divider>
         <ion-item>
             <ion-thumbnail item-left>
                 <img src="../assets/icon/cat_icon_campus.png"/>
@@ -35,44 +37,35 @@
             </ion-thumbnail>
             <ion-thumbnail item-left>
                 <img src="../assets/icon/cat_icon_foodanddrink.png"/>
-                <p>Food and Drink</p>
-                
+                <p>Eat</p>               
             </ion-thumbnail>
             <ion-thumbnail item-left>
                 <img src="../assets/icon/cat_icon_campus.png"/>
-                <p>Events</p>
-                
+                <p>Events</p>               
             </ion-thumbnail>
-            <ion-thumbnail item-left>
-                <img src="../assets/icon/cat_icon_campus.png"/>
-                <p>Campus</p>
-                
-            </ion-thumbnail>
-            <ion-thumbnail item-left>
-                <img src="../assets/icon/cat_icon_campus.png"/>
-                <p>Campus</p>
-                
-            </ion-thumbnail>
+
         </ion-item>
+            </ion-item-group>
     </ion-list>
     
     <ion-list>
-        <ion-list-header>
+        <ion-item-group>
+        <ion-item-divider>
             Popular Tags
-        </ion-list-header>
+        </ion-item-divider>
         
         <ion-item>
-            <ion-icon name="chatbubbles" item-left></ion-icon>Social         
+            <ion-icon name="chatbubbles" item-left></ion-icon>Study         
         </ion-item>
         
         <ion-item>
-            <ion-icon name="chatbubbles" item-left></ion-icon>Social         
+            <ion-icon name="chatbubbles" item-left></ion-icon>Mid-term         
         </ion-item>
         
         <ion-item>
-            <ion-icon name="chatbubbles" item-left></ion-icon>Social         
+            <ion-icon name="chatbubbles" item-left></ion-icon>Street         
         </ion-item>
-        
+        </ion-item-group>
     </ion-list>
 
     <button ion-button block color="accent" (click)="goToList()">
