@@ -148,7 +148,7 @@ export class EditProfilePage {
     alert.present();
   }
   
-        updateYear(){
+updateYear(){
     let alert = this.alertCtrl.create({
       message: "Current Year",
       inputs: [
