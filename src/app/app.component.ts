@@ -13,9 +13,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 })
 
 export class MyApp {
-  rootPage: any = TabsPage;
-
-    
+  rootPage: any = TabsPage; 
     
   constructor(platform: Platform) {
   

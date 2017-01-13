@@ -15,6 +15,12 @@ export class PostListPage {
     this.nav = nav;
     this.postData = postData;
     
+    
+
+    
+  }
+  
+  ionViewDidLoad (){
     this.postData.getPostList().on('value', snapshot => {
         let rawList = [];
         snapshot.forEach( snap => {
@@ -29,8 +35,6 @@ export class PostListPage {
         });
         this.postList = rawList;
     });
-
-    
   }
   
   goToPostDetail(postId){

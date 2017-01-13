@@ -22,11 +22,18 @@ export class ProfilePage {
 
   constructor(public nav: NavController, public profileData: ProfileData,
     public authData: AuthData, public postData: PostData) {
+    
+    this.postData = postData;
+    
+    
+  }
+  
+  ionViewDidLoad () {
     this.profileData.getUserProfile().on('value', (data) => {
       this.userProfile = data.val();
     });
     
-    this.postData = postData;
+    
     
     this.postData.getPostList().on('value', snapshot => {
         let rawList = [];
@@ -44,7 +51,7 @@ export class ProfilePage {
     });
   }
   
-    goToPostDetail(postId){
+goToPostDetail(postId){
   this.nav.push(PostDetailPage, {
     postId: postId,
   });

@@ -1,4 +1,4 @@
-<ion-menu [content]="mycontent">
+<ion-menu [content]="mycontent" type="overlay">
     <ion-header>
         <ion-toolbar>
         <ion-title>Menu</ion-title>
@@ -6,7 +6,7 @@
     </ion-header>
     <ion-content>
         <ion-list>
-            <button ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
     
       <button ion-button (click)="logOut()">
         <ion-icon name="log-out"></ion-icon>Log Out
@@ -17,8 +17,7 @@
 </ion-menu>
 
 <ion-header>     
-    <ion-navbar #mycontent>
-     
+    <ion-navbar #mycontent swipeBackEnabled="false">
         
             <button ion-button icon-only menuToggle>
             <ion-icon name="menu"></ion-icon>
