@@ -1,7 +1,35 @@
 page-post-detail {
 
-    .openPostBackground {
-        background-color: greenyellow;
+    .socialPost {
+        background-color: map-get($postColors, socialYellow);
+    }
+    
+    .infoPost {
+        background-color: map-get($postColors, infoBlue);
+    }
+    
+    .campusPost {
+        background-color: map-get($postColors, campusOrange);
+    }
+    
+    .explorePost {
+        background-color: map-get($postColors, exploreGreen);
+    }
+    
+    .eventPost {
+        background-color: map-get($postColors, eventRed);
+    }
+    
+    .newsPost {
+        background-color: map-get($postColors, infoBlue);
+    }
+    
+    .miscPost {
+        background-color: map-get($postColors, campusOrange);
+    }
+    
+    .clubsPost {
+        background-color: map-get($postColors, socialYellow);
     }
     
     .toolbar-background {
@@ -12,7 +40,7 @@ page-post-detail {
     
     .postContent {
         font-size: 400%;
-        font-family: 'Montserrat';
+        font-family: 'Montserrat-Bold';
         font-weight: 800;
     }
 }

@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding fullscreen class="openPostBackground">
+<ion-content padding fullscreen class="socialPost" *ngIf="currentPost.category == 'Social'">
     <h2>
     {{currentPost.name}}
     </h2>
@@ -21,19 +21,106 @@
     <p>{{currentPost.tag}}</p>
     <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
     
-    <img *ngIf="currentPost.category == 'Social'" src="../assets/icon/cat_icon_social.png">
-    <img *ngIf="currentPost.category == 'Information'" src="../assets/icon/cat_icon_information_black.png">
-    <img *ngIf="currentPost.category == 'Campus'" src="../assets/icon/cat_icon_campus_black.png">
-    <img *ngIf="currentPost.category == 'Explore'" src="../assets/icon/cat_icon_explore_black.png">
-    <img *ngIf="currentPost.category == 'Event'" src="../assets/icon/cat_icon_event_black.png">
-    <img *ngIf="currentPost.category == 'News'" src="../assets/icon/cat_icon_news_black.png">
-    <img *ngIf="currentPost.category == 'Miscellaneous'" src="../assets/icon/cat_icon_misc_black.png">
-    <img *ngIf="currentPost.category == 'Clubs'" src="../assets/icon/cat_icon_clubs_black.png">
-    <!--other category icons go here -->
-   
+    <img src="assets/icon/cat_icon_social.png"> 
     
     <p class="postContent">{{currentPost.content}}</p>
-    
-    
+      
 </ion-content>
 
+<ion-content padding fullscreen class="infoPost" *ngIf="currentPost.category == 'Information'">
+    <h2>
+    {{currentPost.name}}
+    </h2>
+    <p>Category: {{currentPost.category}}</p>
+    <p>{{currentPost.tag}}</p>
+    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    
+    <img src="assets/icon/cat_icon_information_black.png"> 
+    
+    <p class="postContent">{{currentPost.content}}</p>
+      
+</ion-content>
+
+<ion-content padding fullscreen class="campusPost" *ngIf="currentPost.category == 'Campus'">
+    <h2>
+    {{currentPost.name}}
+    </h2>
+    <p>Category: {{currentPost.category}}</p>
+    <p>{{currentPost.tag}}</p>
+    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    
+    <img src="assets/icon/cat_icon_campus_black.png"> 
+    
+    <p class="postContent">{{currentPost.content}}</p>
+      
+</ion-content>
+
+<ion-content padding fullscreen class="explorePost" *ngIf="currentPost.category == 'Explore'">
+    <h2>
+    {{currentPost.name}}
+    </h2>
+    <p>Category: {{currentPost.category}}</p>
+    <p>{{currentPost.tag}}</p>
+    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    
+    <img src="assets/icon/cat_icon_explore_black.png"> 
+    
+    <p class="postContent">{{currentPost.content}}</p>
+      
+</ion-content>
+
+<ion-content padding fullscreen class="eventPost" *ngIf="currentPost.category == 'Event'">
+    <h2>
+    {{currentPost.name}}
+    </h2>
+    <p>Category: {{currentPost.category}}</p>
+    <p>{{currentPost.tag}}</p>
+    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    
+    <img src="assets/icon/cat_icon_event_black.png"> 
+    
+    <p class="postContent">{{currentPost.content}}</p>
+      
+</ion-content>
+
+<ion-content padding fullscreen class="newsPost" *ngIf="currentPost.category == 'News'">
+    <h2>
+    {{currentPost.name}}
+    </h2>
+    <p>Category: {{currentPost.category}}</p>
+    <p>{{currentPost.tag}}</p>
+    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    
+    <img src="assets/icon/cat_icon_news_black.png"> 
+    
+    <p class="postContent">{{currentPost.content}}</p>
+      
+</ion-content>
+
+<ion-content padding fullscreen class="miscPost" *ngIf="currentPost.category == 'Miscellaneous'">
+    <h2>
+    {{currentPost.name}}
+    </h2>
+    <p>Category: {{currentPost.category}}</p>
+    <p>{{currentPost.tag}}</p>
+    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    
+    <img src="assets/icon/cat_icon_misc_black.png"> 
+    
+    <p class="postContent">{{currentPost.content}}</p>
+      
+</ion-content>
+
+<ion-content padding fullscreen class="clubsPost" *ngIf="currentPost.category == 'Clubs'">
+    <h2>
+    {{currentPost.name}}
+    </h2>
+    <p>Category: {{currentPost.category}}</p>
+    <p>{{currentPost.tag}}</p>
+    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    
+    <img src="assets/icon/cat_icon_clubs_black.png"> 
+    
+    <p class="postContent">{{currentPost.content}}</p>
+      
+</ion-content>
