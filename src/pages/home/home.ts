@@ -7,8 +7,6 @@ import { TasksPage } from '../tasks/tasks';
 import { PostsPage } from '../posts/posts';
 import { PostDetailPage } from '../post-detail/post-detail';
 
-import { PostData } from '../../providers/post-data';
-
 import { AuthData } from '../../providers/auth-data';
 
 @Component({
