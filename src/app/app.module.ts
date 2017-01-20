@@ -20,6 +20,8 @@ import { PostListPage } from '../pages/post-list/post-list';
 import { TaskListPage } from '../pages/task-list/task-list';
 import { ReportPage } from '../pages/report/report';
 import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
+import { CommentsPage } from '../pages/comments/comments';
+import { CommentCreatePage } from '../pages/comment-create/comment-create';
 
 
 //import providers
@@ -46,11 +48,16 @@ import { ProfileData } from '../providers/profile-data';
     PostCreatePage,
     TaskListPage,
     ReportPage,
-    LeaderboardPage
+    LeaderboardPage,
+    CommentsPage,
+    CommentCreatePage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
-  ],
+    IonicModule.forRoot(MyApp, {
+      backButtonText: ''
+      
+    }, {}
+  )],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
@@ -69,7 +76,9 @@ import { ProfileData } from '../providers/profile-data';
     PostCreatePage,
     TaskListPage,
     ReportPage,
-    LeaderboardPage
+    LeaderboardPage,
+    CommentsPage,
+    CommentCreatePage
     
   ],
   providers: [

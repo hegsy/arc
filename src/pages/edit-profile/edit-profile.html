@@ -12,10 +12,10 @@
     <ion-item (click)="updateName()">
       <ion-grid>         
         <ion-row>
-        <ion-col class="editUserLabel" width-50>
+        <ion-col class="editUserLabel" width-40>
             Name
         </ion-col>
-        <ion-col *ngIf="userProfile?.firstName || userProfile?.lastName">
+        <ion-col class="editUserDetail" *ngIf="userProfile?.firstName || userProfile?.lastName">
             {{userProfile?.firstName}} {{userProfile?.lastName}}
         </ion-col>
         <ion-col class="placeholder-profile" *ngIf="!userProfile?.firstName">
@@ -33,7 +33,7 @@
             <ion-col class="editUserLabel" width-50>
             Profile Picture
             </ion-col>
-            <ion-col>
+            <ion-col class="editUserDetail">
                 <ion-buttons>
                     <button (click)="takePicture()">
                     <ion-icon name="camera"></ion-icon>
@@ -47,10 +47,10 @@
     <ion-item (click)="updateEmail()">
       <ion-grid>
         <ion-row>
-          <ion-col class="editUserLabel" width-50>
+          <ion-col class="editUserLabel" width-40>
             Email
           </ion-col>
-          <ion-col width-50 *ngIf="userProfile?.email">
+          <ion-col class="editUserDetail" width-60 *ngIf="userProfile?.email">
             {{userProfile?.email}}
           </ion-col>
             <ion-col class="placeholder-profile" *ngIf="!userProfile?.email">
@@ -67,7 +67,7 @@
           <ion-col class="editUserLabel" width-50>
             Password
           </ion-col>
-          <ion-col class="placeholder-profile">
+          <ion-col class="editUserDetail" class="placeholder-profile">
             <span>
               Tap here to edit.
             </span>
@@ -82,7 +82,7 @@
           <ion-col class="editUserLabel" width-50>
             College
           </ion-col>
-            <ion-col *ngIf="userProfile?.college">
+            <ion-col class="editUserDetail" *ngIf="userProfile?.college">
             {{userProfile?.college}}                
           </ion-col>
           <ion-col class="placeholder-college" *ngIf="!userProfile?.college">
@@ -100,7 +100,7 @@
           <ion-col class="editUserLabel" width-50>
             Course
           </ion-col>
-            <ion-col *ngIf="userProfile?.course">
+            <ion-col class="editUserDetail" *ngIf="userProfile?.course">
             {{userProfile?.course}}                
           </ion-col>
           <ion-col class="placeholder-course" *ngIf="!userProfile?.course">
@@ -118,7 +118,7 @@
           <ion-col class="editUserLabel" width-50>
             Year
           </ion-col>
-            <ion-col *ngIf="userProfile?.year">
+            <ion-col class="editUserDetail" *ngIf="userProfile?.year">
             {{userProfile?.year}}                
           </ion-col>
           <ion-col class="placeholder-year" *ngIf="!userProfile?.year">

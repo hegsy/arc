@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ModalController } from 'ionic-angular';
 import { PostDetailPage } from '../post-detail/post-detail';
 import { PostData } from '../../providers/post-data';
+import { CommentsPage } from '../comments/comments';
 
 @Component({
   selector: 'page-post-list',
@@ -18,6 +19,10 @@ export class PostListPage {
     
 
     
+  }
+  
+  goToComments(){
+    this.nav.push(CommentsPage);
   }
   
   ionViewDidLoad (){
