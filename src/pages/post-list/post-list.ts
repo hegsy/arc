@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { PostDetailPage } from '../post-detail/post-detail';
 import { PostData } from '../../providers/post-data';
 import { CommentsPage } from '../comments/comments';

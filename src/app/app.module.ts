@@ -29,6 +29,7 @@ import { CommentCreatePage } from '../pages/comment-create/comment-create';
 import { AuthData } from '../providers/auth-data';
 import { PostData } from '../providers/post-data';
 import { ProfileData } from '../providers/profile-data';
+import { CommentData } from '../providers/comment-data';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { ProfileData } from '../providers/profile-data';
       {provide: ErrorHandler, useClass: IonicErrorHandler}, 
       AuthData, 
       ProfileData, 
-      PostData
+      PostData,
+      CommentData
   ]
 })
 export class AppModule {}

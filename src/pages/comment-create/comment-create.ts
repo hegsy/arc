@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
 
-/*
-  Generated class for the CommentCreate page.
+import { CommentData } from '../../providers/comment-data';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-comment-create',
   templateUrl: 'comment-create.html'
 })
 export class CommentCreatePage {
 
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController) {}
+  constructor(public nav: NavController, public viewCtrl: ViewController, public commentData: CommentData) {
+  
+  this.commentData = commentData;
+  this.nav = nav;
+  }
 
   ionViewDidLoad() {
     console.log('Hello CommentCreatePage Page');
@@ -23,5 +23,12 @@ export class CommentCreatePage {
   closeModal() {
     this.viewCtrl.dismiss();
   }
+  
+  createComment(commentContent: string) {
+    this.commentData.createComment(commentContent).then(() => {
+        this.nav.pop();
+        //to go back to TabsPage
+    });
+}
 
 }

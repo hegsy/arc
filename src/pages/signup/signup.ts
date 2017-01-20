@@ -27,7 +27,7 @@ export class SignupPage {
     })
   }
   
-    elementChanged(input){
+elementChanged(input){
     let field = input.inputControl.name;
     this[field + "Changed"] = true;
   }
