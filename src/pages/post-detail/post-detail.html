@@ -17,110 +17,153 @@
     <h2>
     {{currentPost.name}}
     </h2>
-    <p>Category: {{currentPost.category}}</p>
-    <p>{{currentPost.tag}}</p>
-    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
-    
-    <img src="assets/icon/cat_icon_social.png"> 
-    
+
+    <button ion-button outline><p>{{currentPost.tag}}</p></button>
+    <p><strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+
     <p class="postContent">{{currentPost.content}}</p>
       
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="assets/icon/cat_icon_social.png"> 
+        </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
 
 <ion-content padding fullscreen class="infoPost" *ngIf="currentPost.category == 'Information'">
     <h2>
     {{currentPost.name}}
     </h2>
-    <p>Category: {{currentPost.category}}</p>
-    <p>{{currentPost.tag}}</p>
-    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+
+    <button ion-button outline><p>{{currentPost.tag}}</p></button>
+    <p><strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
     
-    <img src="assets/icon/cat_icon_information_black.png"> 
+   
     
     <p class="postContent">{{currentPost.content}}</p>
       
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+             <img src="assets/icon/cat_icon_information_black.png"> 
+        </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
 
 <ion-content padding fullscreen class="campusPost" *ngIf="currentPost.category == 'Campus'">
     <h2>
     {{currentPost.name}}
     </h2>
-    <p>Category: {{currentPost.category}}</p>
-    <p>{{currentPost.tag}}</p>
-    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
-    
-    <img src="assets/icon/cat_icon_campus_black.png"> 
+
+    <button ion-button outline><p>{{currentPost.tag}}</p></button>
+    <p><strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
     
     <p class="postContent">{{currentPost.content}}</p>
       
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="assets/icon/cat_icon_campus_black.png"> 
+        </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
 
 <ion-content padding fullscreen class="explorePost" *ngIf="currentPost.category == 'Explore'">
     <h2>
     {{currentPost.name}}
     </h2>
-    <p>Category: {{currentPost.category}}</p>
-    <p>{{currentPost.tag}}</p>
-    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+    <button ion-button outline><p>{{currentPost.tag}}</p></button>
     
-    <img src="assets/icon/cat_icon_explore_black.png"> 
+    <p><strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+
     
     <p class="postContent">{{currentPost.content}}</p>
-      
+        
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="assets/icon/cat_icon_explore_black.png">
+        </ion-col>
+        </ion-row>
+    </ion-grid>   
+    
 </ion-content>
 
 <ion-content padding fullscreen class="eventPost" *ngIf="currentPost.category == 'Event'">
     <h2>
     {{currentPost.name}}
     </h2>
-    <p>Category: {{currentPost.category}}</p>
-    <p>{{currentPost.tag}}</p>
-    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
-    
-    <img src="assets/icon/cat_icon_event_black.png"> 
-    
+
+    <button ion-button outline><p>{{currentPost.tag}}</p></button>
+    <p><strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+
     <p class="postContent">{{currentPost.content}}</p>
       
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="assets/icon/cat_icon_event_black.png"> 
+        </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
 
 <ion-content padding fullscreen class="newsPost" *ngIf="currentPost.category == 'News'">
     <h2>
     {{currentPost.name}}
     </h2>
-    <p>Category: {{currentPost.category}}</p>
-    <p>{{currentPost.tag}}</p>
-    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
-    
-    <img src="assets/icon/cat_icon_news_black.png"> 
-    
+
+    <button ion-button outline><p>{{currentPost.tag}}</p></button>
+    <p><strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+ 
     <p class="postContent">{{currentPost.content}}</p>
       
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="assets/icon/cat_icon_news_black.png"> 
+        </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
 
 <ion-content padding fullscreen class="miscPost" *ngIf="currentPost.category == 'Miscellaneous'">
     <h2>
     {{currentPost.name}}
     </h2>
-    <p>Category: {{currentPost.category}}</p>
-    <p>{{currentPost.tag}}</p>
-    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
-    
-    <img src="assets/icon/cat_icon_misc_black.png"> 
-    
+
+    <button ion-button outline><p>{{currentPost.tag}}</p></button>
+    <p><strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+
     <p class="postContent">{{currentPost.content}}</p>
       
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="assets/icon/cat_icon_misc_black.png"> 
+        </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
 
 <ion-content padding fullscreen class="clubsPost" *ngIf="currentPost.category == 'Clubs'">
     <h2>
     {{currentPost.name}}
     </h2>
-    <p>Category: {{currentPost.category}}</p>
-    <p>{{currentPost.tag}}</p>
-    <p>Posted: <strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
-    
-    <img src="assets/icon/cat_icon_clubs_black.png"> 
-    
+    <button ion-button outline><p>{{currentPost.tag}}</p></button>
+    <p><strong>{{currentPost.dateCreated | date: 'medium'}}</strong></p>
+ 
     <p class="postContent">{{currentPost.content}}</p>
       
+    <ion-grid>
+        <ion-row>
+        <ion-col>
+            <img src="assets/icon/cat_icon_clubs_black.png"> 
+        </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

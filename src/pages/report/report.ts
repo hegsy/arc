@@ -1,22 +1,30 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-/*
-  Generated class for the Report page.
+import { LeaderboardPage } from '../leaderboard/leaderboard';
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-report',
   templateUrl: 'report.html'
 })
 export class ReportPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public nav: NavController) {
+  
+    
+  
+  }
 
   ionViewDidLoad() {
     console.log('Hello ReportPage Page');
+    
+    
   }
+  
+  goToLeaderboard(){
+      this.nav.push(LeaderboardPage);
+    }
+    
+    
 
 }

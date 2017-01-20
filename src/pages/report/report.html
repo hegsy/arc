@@ -7,12 +7,67 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>report</ion-title>
+    <ion-title>Report Card</ion-title>
+      <ion-buttons end>
+      <button ion-button icon-only (click)="goToLeaderboard()"><ion-icon name="trophy"></ion-icon>
+          </button>
+        </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-grid>
+        <ion-row center class="reportBGtop">
+            <ion-col center>
+<!--                <img class="profileReport" src="assets/img/girl_avatar.png"/>-->
+                <h1 class="counter" data-count="1200">0</h1>
+                <h2>Credits</h2>
+            </ion-col>
+        </ion-row>
+        <ion-row class="reportBGbottom" wrap>
+            <ion-col width-25>              
+                    <img class="reportTask" src="assets/icon/task_cat_code.png"/>
+                    <ion-badge>100</ion-badge>               
+            </ion-col>
+            <ion-col width-25>        
+                    <img class="reportTask" src="assets/icon/task_cat_social.png"/>
+                    <ion-badge>300</ion-badge>
+            </ion-col> 
+            <ion-col width-25>          
+                    <img class="reportTask" src="assets/icon/task_cat_clubs.png"/>
+                    <ion-badge>200</ion-badge>            
+            </ion-col>
+            <ion-col width-25>         
+                    <img class="reportTask" src="assets/icon/task_cat_explore.png"/>
+                    <ion-badge>500</ion-badge>            
+            </ion-col> 
+            <ion-col width-25>              
+                    <img class="reportTask" src="assets/icon/task_cat_eat.png"/>
+                    <ion-badge>100</ion-badge>              
+            </ion-col>
+            <ion-col width-25>        
+                    <img class="reportTask" src="assets/icon/task_cat_campus.png"/>
+                    <ion-badge>300</ion-badge>     
+            </ion-col>
+        </ion-row>
+        <ion-row class="shareReport">
+            <ion-col>
+            <h4>Share Your Progress</h4>
+                </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+            <button ion-button icon-only>
+              <ion-icon name="logo-twitter"></ion-icon>
+            </button>
+            <button ion-button icon-only>
+              <ion-icon name="logo-facebook"></ion-icon>
+            </button>
+                </ion-col>
+        </ion-row>
+        
+    </ion-grid>
 
 </ion-content>

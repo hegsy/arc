@@ -11,7 +11,7 @@
         </button>
         <ion-title>Tasks</ion-title>
     <ion-buttons end>
-        <button ion-button>
+        <button ion-button (click)="goToReport()">
         <ion-img class="reportcardicon" src="assets/icon/hat_icon.png"></ion-img>
         </button>
     </ion-buttons>
@@ -22,10 +22,9 @@
 
 <ion-content>
             <ion-grid>
-                <ion-row>
+                <ion-row center>
                     <ion-col>
-                        <ion-card>                           
-                            <ion-card-content>
+                        <ion-card (click)="goToTaskList()">     <ion-card-content>
                                  <ion-badge color="accent">5</ion-badge>
                                 <img src="assets/icon/task_icon_findthecode.png">
                                <p>Code</p> 
@@ -42,7 +41,7 @@
                         </ion-card>
                     </ion-col>
                     </ion-row>
-                <ion-row>
+                <ion-row center>
                     <ion-col>
                         <ion-card>                           
                             <ion-card-content>
@@ -62,7 +61,7 @@
                         </ion-card>
                     </ion-col>
                     </ion-row>
-                <ion-row>
+                <ion-row center>
                     <ion-col>
                         <ion-card>                           
                             <ion-card-content>

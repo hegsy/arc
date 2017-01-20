@@ -18,14 +18,19 @@ page-tasks {
     
     .card {
         background: #fff;
+        width: 75%;
+        margin-left: 20px;
     }
     .card-ios {
         background: #fff;
     }
     
     ion-badge {
-
-        position: absolute;
-        
+        position: absolute;       
     }
+
+    ion-row {
+        height: 150px;
+    }
+
 }

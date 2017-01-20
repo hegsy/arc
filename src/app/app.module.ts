@@ -17,6 +17,10 @@ import { ResetPasswordPage } from '../pages/reset-password/reset-password';
 import { PostCreatePage } from '../pages/post-create/post-create';
 import { PostDetailPage } from '../pages/post-detail/post-detail';
 import { PostListPage } from '../pages/post-list/post-list';
+import { TaskListPage } from '../pages/task-list/task-list';
+import { ReportPage } from '../pages/report/report';
+import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
+
 
 //import providers
 
@@ -39,7 +43,10 @@ import { ProfileData } from '../providers/profile-data';
     ResetPasswordPage,
     PostDetailPage,
     PostListPage,
-    PostCreatePage
+    PostCreatePage,
+    TaskListPage,
+    ReportPage,
+    LeaderboardPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -59,7 +66,11 @@ import { ProfileData } from '../providers/profile-data';
     ResetPasswordPage,
     PostDetailPage,
     PostListPage,
-    PostCreatePage
+    PostCreatePage,
+    TaskListPage,
+    ReportPage,
+    LeaderboardPage
+    
   ],
   providers: [
       {provide: ErrorHandler, useClass: IonicErrorHandler}, 
