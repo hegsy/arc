@@ -20,30 +20,18 @@
 
 <ion-content>
 <ion-list>
-  <ion-item>
+  <ion-item *ngFor="let comment of comments">
     <ion-avatar item-left>
       <img src="assets/img/girl_avatar.png">
     </ion-avatar>
-    <h2>Finn</h2>
-    <ion-note>3:43 pm</ion-note>
-    <p>I've had a pretty messed up day. If we just...</p>   
+    <h2>{{comment.author}}</h2>
+    <ion-note>{{comment.dateCreated  | date: 'shortTime'}}</ion-note>
+    <p>{{comment.content}}</p>   
     <button ion-button icon-left clear small item-right color="accent" >
         <ion-icon name="arrow-dropup"></ion-icon>
         <div>5</div>
     </button>
   </ion-item>
-    
-  <ion-item>
-    <ion-avatar item-left>
-      <img src="assets/img/girl_avatar.png">
-    </ion-avatar>
-    <h2>Finn</h2>
-    <ion-note>3:43 pm</ion-note>
-    <p>I've had a pretty messed up day. If we just...</p>   
-    <button ion-button icon-left clear small item-right color="accent" >
-        <ion-icon name="arrow-dropup"></ion-icon>
-        <div>5</div>
-    </button>
-  </ion-item>
+
 </ion-list>
 </ion-content>

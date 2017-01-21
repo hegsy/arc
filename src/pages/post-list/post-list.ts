@@ -16,9 +16,6 @@ export class PostListPage {
     this.nav = nav;
     this.postData = postData;
     
-    
-
-    
   }
   
   goToComments(){
@@ -26,7 +23,7 @@ export class PostListPage {
   }
   
   ionViewDidLoad (){
-    this.postData.getPostList().on('value', snapshot => {
+    this.postData.getPostList().orderByChild("dateCreated").on('value', snapshot => {
         let rawList = [];
         snapshot.forEach( snap => {
             rawList.push({

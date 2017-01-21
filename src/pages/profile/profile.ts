@@ -60,7 +60,7 @@ goToPostDetail(postId){
 deletePost(postId) {
     this.postData.deletePost(postId).then(() => {
         this.nav.pop();
-        //to go back to TabsPage
+       
     });
 }
     

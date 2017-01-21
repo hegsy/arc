@@ -60,10 +60,14 @@ updateName(firstName: string, lastName: string): any {
     });
   }
   
-      updateYear(year: string): any {
+updateYear(year: string): any {
     return this.userProfile.child(this.currentUser.uid).update({
       year: year     
     });
   }
+  
+getFirstName(firstName){
+    return this.userProfile.child(firstName);
+}
 
 }

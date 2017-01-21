@@ -24,10 +24,10 @@ export class CommentCreatePage {
     this.viewCtrl.dismiss();
   }
   
-  createComment(commentContent: string) {
-    this.commentData.createComment(commentContent).then(() => {
+  createComment(commentContent: string, author: string,  dateCreated: string) {
+    this.commentData.createComment(commentContent, author,  dateCreated).then(() => {
         this.nav.pop();
-        //to go back to TabsPage
+        
     });
 }
 

@@ -34,4 +34,8 @@ export class AuthData {
   return this.fireAuth.signOut();
   }
   
+  getLoggedInUser(){
+    return firebase.auth().currentUser;
+  }
+  
 }
