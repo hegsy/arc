@@ -64,7 +64,7 @@ export class LoginPage {
   this.loading.present();
   }
 }
-    goToSignup(){
+goToSignup(){
     this.nav.push(SignupPage);
   }
 

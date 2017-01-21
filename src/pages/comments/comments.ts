@@ -5,11 +5,14 @@ import { CommentCreatePage } from '../comment-create/comment-create';
 
 import { CommentData } from '../../providers/comment-data';
 
+
 @Component({
   selector: 'page-comments',
   templateUrl: 'comments.html'
 })
 export class CommentsPage {
+    
+    public votes: any;
 
     public comments: any;
 
@@ -23,7 +26,6 @@ export class CommentsPage {
                 id:snap.key,
                 content: snap.val().content,
                 author: snap.val().author,
-                
                 dateCreated: snap.val().dateCreated
                 
             });
@@ -32,7 +34,12 @@ export class CommentsPage {
     });
   }
 
+    vote(commentid: string, count: number){
+        this.commentData.vote(commentid, count);
+    }
   
+
+
   goToCreateComment(){
       
       let modal = this.modalCtrl.create(CommentCreatePage);

@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PostDetailPage } from '../post-detail/post-detail';
-import { PostData } from '../../providers/post-data';
+
 import { CommentsPage } from '../comments/comments';
+
+import { AuthData } from '../../providers/auth-data';
+import { PostData } from '../../providers/post-data';
 
 @Component({
   selector: 'page-post-list',
@@ -12,7 +15,7 @@ export class PostListPage {
 
     public postList: any;
 
-  constructor(public nav: NavController, public postData: PostData) {
+  constructor(public nav: NavController, public postData: PostData, public authData: AuthData) {
     this.nav = nav;
     this.postData = postData;
     
@@ -50,8 +53,20 @@ deletePost(postId) {
         this.nav.pop();
         //to go back to TabsPage
     });
+    
+
+	    }
+        
+                addPostToFavorites(postId) {
+
+let currentUser = this.authData.getLoggedInUser().uid;
+
+ this.postData.addPostToFavorites(currentUser, postId);
+	                
+	        } 
+
 }
 
 
 
-}
+

@@ -26,8 +26,9 @@
     </ion-avatar>
     <h2>{{comment.author}}</h2>
     <ion-note>{{comment.dateCreated  | date: 'shortTime'}}</ion-note>
-    <p>{{comment.content}}</p>   
-    <button ion-button icon-left clear small item-right color="accent" >
+    <p>{{comment.content}}</p> 
+    
+    <button ion-button icon-left clear small item-right color="accent" (click)="vote(comment.id, 1)">
         <ion-icon name="arrow-dropup"></ion-icon>
         <div>5</div>
     </button>

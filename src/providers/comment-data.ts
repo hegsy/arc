@@ -12,6 +12,8 @@ export class CommentData {
 public comments: any;
 public postList: any;
 public currentUser: any;
+public votes: any;
+commentsRef: any = firebase.database().ref('comments');
 
   constructor(public authData: AuthData) {
     console.log('Hello CommentData Provider');
@@ -21,7 +23,7 @@ public currentUser: any;
   }
 
 
-    createComment(commentContent: string, author: string,  dateCreated: string): any {
+createComment(commentContent: string, author: string,  dateCreated: string): any {
     
     return this.comments.push({
         content: commentContent,
@@ -35,6 +37,14 @@ public currentUser: any;
     
 }
 
+vote(commentid: string, count: number):any {
+    //this.votes = firebase.database().ref('comments/' + commentid + '/votes');
+    
+    count = 1;
+    
+    //return this.votes.set(count);
+    return this.commentsRef.child(commentid + '/votes/' + this.currentUser).set(count);
+}
 
 
   getComments(): any {

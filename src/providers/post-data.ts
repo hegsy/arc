@@ -7,6 +7,8 @@ export class PostData {
 
 public currentUser: any;
 public postList: any;
+public favorites: any;
+usersRef: any = firebase.database().ref('userProfile');
 
   constructor() {
     this.currentUser = firebase.auth().currentUser.uid;
@@ -39,5 +41,15 @@ deletePost(postId): any {
   getPostDetail(postId): any{
     return this.postList.child(postId);
   }
+  
+  
+  addPostToFavorites(userid: string, postid: string) {
+        //this.favorites = firebase.database().ref('userProfile/' + this.currentUser + '/favorites' + postid);
+        
+        //return this.favorites.set(true);
+        
+        return this.usersRef.child(userid + '/favorites/' + postid).set(true);
+    }
+
 
 }
