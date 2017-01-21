@@ -5,6 +5,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import firebase from 'firebase';
 
 import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -28,7 +29,7 @@ export class MyApp {
     
     firebase.auth().onAuthStateChanged((user) => {
           if (!user) {
-            this.rootPage = LoginPage;
+            this.rootPage = SignupPage;
           }
     });
     

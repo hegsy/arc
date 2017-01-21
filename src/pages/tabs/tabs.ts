@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 import { HomePage } from '../home/home';
 import { ProfilePage } from '../profile/profile';
 import { PostsPage } from '../posts/posts';
@@ -21,4 +22,5 @@ export class TabsPage {
   constructor() {
 
   }
+  
 }

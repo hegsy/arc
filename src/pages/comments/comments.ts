@@ -19,6 +19,7 @@ export class CommentsPage {
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public commentData: CommentData) {}
 
   ionViewDidLoad (){
+
     this.commentData.getComments().on('value', snapshot => {
         let rawList = [];
         snapshot.forEach( snap => {
@@ -26,18 +27,18 @@ export class CommentsPage {
                 id:snap.key,
                 content: snap.val().content,
                 author: snap.val().author,
-                dateCreated: snap.val().dateCreated
-                
+                dateCreated: snap.val().dateCreated,
+                votesUp: 1
             });
         });
         this.comments = rawList;
     });
   }
 
-    vote(commentid: string, count: number){
-        this.commentData.vote(commentid, count);
+vote(commentid: string, like: boolean){
+        this.commentData.vote(commentid, like);
     }
-  
+    
 
 
   goToCreateComment(){

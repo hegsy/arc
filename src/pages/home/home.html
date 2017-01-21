@@ -1,4 +1,4 @@
-<ion-menu [content]="mycontent" type="overlay">
+<ion-menu [content]="mycontent" type="overlay" persistent="true">
     <ion-header>
         <ion-toolbar>
         <ion-title>Menu</ion-title>
@@ -18,10 +18,10 @@
 
 <ion-header>     
     <ion-navbar #mycontent swipeBackEnabled="false">
-        
-            <button ion-button icon-only menuToggle>
+<!--       -->
+    <button ion-button icon-only menuToggle>
             <ion-icon name="menu"></ion-icon>
-            </button>
+    </button>
         
         <img class="logo_header" src="assets/img/arc_logo_white.png" width="40"/>
       

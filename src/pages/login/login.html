@@ -6,28 +6,32 @@
 -->
     <ion-content fullscreen class="login-background">
 
-    <div class="logo">
-        <img width="300" src="assets/img/arc_logo_white.png"/>
-    </div>
-    
-    
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+            <img width="150" src="assets/img/arc_logo_white.png"/>
+                <h1>ARC</h1>
+            </ion-col>
+        </ion-row>    
+    </ion-grid>
+
     <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
 
       <ion-item>
-        <ion-label stacked>Email</ion-label>
+<!--        <ion-label stacked>Email</ion-label>-->
         <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)" placeholder="Your email address" [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>
-        <ion-icon name="mail" item-right></ion-icon>
+        <ion-icon name="mail" item-right color="dark"></ion-icon>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Password</ion-label>
+<!--        <ion-label stacked>Password</ion-label>-->
         <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)" placeholder="Your password"  [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
-        <ion-icon name="lock" item-right></ion-icon>
+        <ion-icon name="lock" item-right color="dark"></ion-icon>
       </ion-item>
     
         <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)">Your password needs more than 6 characters.</ion-item>
        
-        <button ion-button color="accent" block type="submit">Log In</button>  
+        <button ion-button color="accent" block round type="submit">Log In</button>  
         
      </form>
     

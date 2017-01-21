@@ -22,15 +22,16 @@
 <ion-list>
   <ion-item *ngFor="let comment of comments">
     <ion-avatar item-left>
+        
       <img src="assets/img/girl_avatar.png">
     </ion-avatar>
     <h2>{{comment.author}}</h2>
     <ion-note>{{comment.dateCreated  | date: 'shortTime'}}</ion-note>
     <p>{{comment.content}}</p> 
     
-    <button ion-button icon-left clear small item-right color="accent" (click)="vote(comment.id, 1)">
+    <button ion-button icon-left clear small item-right color="accent" (click)="vote(comment.id, true)">
         <ion-icon name="arrow-dropup"></ion-icon>
-        <div>5</div>
+        <div>{{comment.votesUp}}</div>
     </button>
   </ion-item>
 

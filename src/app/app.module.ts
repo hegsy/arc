@@ -87,7 +87,8 @@ import { CommentData } from '../providers/comment-data';
       AuthData, 
       ProfileData, 
       PostData,
-      CommentData
+      CommentData,
+      
   ]
 })
 export class AppModule {}

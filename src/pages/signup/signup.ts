@@ -4,9 +4,11 @@ import {
   AlertController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthData } from '../../providers/auth-data';
-import { TabsPage } from '../tabs/tabs';
 
+import { TabsPage } from '../tabs/tabs';
+import { LoginPage } from '../login/login';
+
+import { AuthData } from '../../providers/auth-data';
 
 @Component({
   selector: 'page-signup',
@@ -63,6 +65,10 @@ elementChanged(input){
 
   ionViewDidLoad() {
     console.log('Hello SignupPage Page');
+  }
+  
+  goToLogin(){
+    this.nav.push(LoginPage);
   }
 
 }

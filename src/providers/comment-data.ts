@@ -19,8 +19,11 @@ commentsRef: any = firebase.database().ref('comments');
     console.log('Hello CommentData Provider');
     this.currentUser = firebase.auth().currentUser.uid;
     this.comments = firebase.database().ref('/comments');
- 
+
   }
+  
+ 
+   
 
 
 createComment(commentContent: string, author: string,  dateCreated: string): any {
@@ -37,17 +40,20 @@ createComment(commentContent: string, author: string,  dateCreated: string): any
     
 }
 
-vote(commentid: string, count: number):any {
+vote(commentid: string, like: boolean):any {
     //this.votes = firebase.database().ref('comments/' + commentid + '/votes');
     
-    count = 1;
-    
     //return this.votes.set(count);
-    return this.commentsRef.child(commentid + '/votes/' + this.currentUser).set(count);
+    return this.commentsRef.child(commentid + '/votes/' + this.currentUser).set(like);
 }
 
 
   getComments(): any {
     return this.comments;
   }
+  
+
+
+  
+  
 }

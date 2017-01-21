@@ -1,33 +1,56 @@
 page-login {
-//    button {
-//        width: 80%;       
-//    }
-     
-//    .loginSection {
-//        width: 80%;
-//        margin: auto;
-//        margin: 10%;
-//    }
-    form {
-    margin-bottom: 32px;
-    button {
-      margin-top: 20px;
-    }
-  }
-
-  p {
-    font-size: 0.8em;
-    color: #d2d2d2;
-  }
-    
-    .logo {
-        padding-top: 10%;
-        text-align: center;
-    }
 
     .login-background {
         background: url("../assets/img/loginimg.png");
         background-size: cover;
+    }
+    
+form {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    button {
+      margin-top: 30px;
+    }
+  }
+    
+    h1 {
+        color: #fff;
+        margin: 5px;
+    }
+
+  p {
+    font-size: 0.8em;
+    color: #d2d2d2;
+      
+  }
+
+//  ion-label {
+//    margin-left: 5px;
+//  }
+
+  ion-input {
+    padding: 3px;
+  }
+
+  .invalid {
+    border-bottom: 1px solid #FF6153;
+  }
+
+  .error-message .item-inner {
+    border-bottom: 0 !important;
+  }
+    
+    ion-col {     
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .item {
+        opacity: .8;
+        border-radius: 25px;
+        margin-bottom: 10px;     
     }
 }
 

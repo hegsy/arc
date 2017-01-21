@@ -24,7 +24,7 @@
             <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
             <p>{{post?.tag}}</p>
             <p>{{post?.content}}</p>
-<button ion-button icon-only (click)="addPostToFavorites(post.id)"><ion-icon name="star"></ion-icon></button>
+
             <ion-row>
                 <ion-col>
                   <button ion-button icon-left clear small color="accent" >
@@ -46,7 +46,7 @@
             </ion-row>
         </ion-item>
             <ion-item-options>
-                <button ion-button icon-only>
+                <button ion-button icon-only (click)="addPostToFavorites(post.id)">
                     <ion-icon name="star"></ion-icon>
                 </button>
                 <button ion-button icon-only (click)="deletePost(post.id)">

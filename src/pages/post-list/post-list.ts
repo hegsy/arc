@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { PostDetailPage } from '../post-detail/post-detail';
 
 import { CommentsPage } from '../comments/comments';
@@ -15,8 +15,9 @@ export class PostListPage {
 
     public postList: any;
 
-  constructor(public nav: NavController, public postData: PostData, public authData: AuthData) {
+  constructor(public nav: NavController, public postData: PostData, public authData: AuthData, public toastCtrl: ToastController) {
     this.nav = nav;
+    this.toastCtrl = toastCtrl;
     this.postData = postData;
     
   }
@@ -57,11 +58,18 @@ deletePost(postId) {
 
 	    }
         
-                addPostToFavorites(postId) {
+addPostToFavorites(postId) {
 
 let currentUser = this.authData.getLoggedInUser().uid;
 
  this.postData.addPostToFavorites(currentUser, postId);
+ 
+ let toast = this.toastCtrl.create({
+      message: 'Added to Favourites!',
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
 	                
 	        } 
 
