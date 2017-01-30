@@ -11,6 +11,8 @@ export class AuthData {
   constructor() {
     console.log('Hello AuthData Provider');
     
+    //get firebase references
+    
     this.fireAuth = firebase.auth();
     this.userProfile = firebase.database().ref('/userProfile');
   }

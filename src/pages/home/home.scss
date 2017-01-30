@@ -10,26 +10,29 @@ page-home {
         margin-right: 45px;
     }
     
-    .item {
-        background-color: #fff;
-    }
-    
     .label {
         padding: 0;
         margin-top: 8px;
         margin-bottom: 8px;
+        color: map-get($colors, dark);
         
     }
     
-    .header  {
-        height: 70px;
+    .item-divider {
+        border-bottom: 1px solid #303f9f;
     }
+//    
+//    .header  {
+//        height: 70px;
+//    }
+//    
+//    .toolbar {
+//        height: 70px;  
+//    }
     
-    .toolbar {
-        height: 70px;  
+    ion-note {
+        font-size: 12px;
     }
-    
-
 
 
 }

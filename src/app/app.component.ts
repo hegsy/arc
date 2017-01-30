@@ -4,7 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 import firebase from 'firebase';
 
-import { LoginPage } from '../pages/login/login';
+//import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 
 import { TabsPage } from '../pages/tabs/tabs';
@@ -27,6 +27,7 @@ export class MyApp {
         messagingSenderId: "1034436400559"
     });
     
+    //auth observer to ensure correct state for auth object
     firebase.auth().onAuthStateChanged((user) => {
           if (!user) {
             this.rootPage = SignupPage;

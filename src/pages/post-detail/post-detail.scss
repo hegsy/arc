@@ -9,15 +9,15 @@ page-post-detail {
     }
     
     .campusPost {
-        background-color: map-get($postColors, campusOrange);
+        background-color: map-get($postColors, infoBlue);
     }
     
     .explorePost {
-        background-color: map-get($postColors, exploreGreen);
+        background-color: map-get($postColors, infoBlue);
     }
     
     .eventPost {
-        background-color: map-get($postColors, eventRed);
+        background-color: map-get($postColors, infoBlue);
     }
     
     .newsPost {
@@ -25,11 +25,11 @@ page-post-detail {
     }
     
     .miscPost {
-        background-color: map-get($postColors, campusOrange);
+        background-color: map-get($postColors, infoBlue);
     }
     
     .clubsPost {
-        background-color: map-get($postColors, socialYellow);
+        background-color: map-get($postColors, infoBlue);
     }
     
     .toolbar-background {
