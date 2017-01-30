@@ -24,7 +24,7 @@
             <ion-grid>
                 <ion-row center>
                     <ion-col>
-                        <ion-card (click)="goToTaskList()">     <ion-card-content>
+                        <ion-card (click)="goToTaskList(artasks)">     <ion-card-content>
                                  <ion-badge color="accent">5</ion-badge>
                                 <img src="assets/icon/task_icon_findthecode.png">
                                <p>Code</p> 
@@ -32,7 +32,7 @@
                         </ion-card>
                     </ion-col>
                     <ion-col>
-                        <ion-card>                           
+                        <ion-card (click)="goToTaskList(socialtasks)">                           
                             <ion-card-content>
                                 <ion-badge color="accent">4</ion-badge>
                                 <img src="assets/icon/task_icon_addfriends.png">

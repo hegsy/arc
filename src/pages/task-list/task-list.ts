@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component} from '@angular/core';
+import { NavController, NavParams } from 'ionic-angular';
+
+
 
 /*
   Generated class for the TaskList page.
@@ -12,11 +14,25 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'task-list.html'
 })
 export class TaskListPage {
+	
+	arTaskCategory: any;
+	socialTaskCategory: any;
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public nav: NavController, public navParams: NavParams) {
+
+  	this.navParams = navParams;
+    
+     this.arTaskCategory = navParams.get('taskCategory');
+    
+
+
+  	    
+
+  }
 
   ionViewDidLoad() {
     console.log('Hello TaskListPage Page');
   }
 
 }
+
