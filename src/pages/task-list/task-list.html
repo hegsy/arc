@@ -13,16 +13,15 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="slide-in-both-ways">
     <ion-list >
-        <ion-item *ngFor="let ar of arTaskCategory">
-            <ion-icon item-left name="camera">
-                
-            </ion-icon>
-            <h2>{{ar.title}}</h2>
-            <p>{{ar.desc}}</p>
-            <button ion-button clear item-right>
-            <ion-badge>{{ar.credits}}</ion-badge></button>
+        <ion-item *ngFor="let cat of task">
+            <!-- <ion-icon item-left name="camera"></ion-icon> -->
+            <h2 class="animate-in-primary">{{cat.title}}</h2>
+            <p>{{cat.desc}}</p>
+            <button ion-button clear item-right class="animate-in-secondary">
+            <ion-badge color="accent">{{cat.credits}}</ion-badge>
+            </button>
         </ion-item>
     </ion-list>
 

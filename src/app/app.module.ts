@@ -1,6 +1,8 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { Storage } from '@ionic/storage';
+
 
 //Import Pages 
 
@@ -22,6 +24,7 @@ import { ReportPage } from '../pages/report/report';
 import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
 import { CommentsPage } from '../pages/comments/comments';
 import { CommentCreatePage } from '../pages/comment-create/comment-create';
+import { IntroPage } from '../pages/intro/intro';
 
 
 //import providers
@@ -51,7 +54,9 @@ import { CommentData } from '../providers/comment-data';
     ReportPage,
     LeaderboardPage,
     CommentsPage,
-    CommentCreatePage
+    CommentCreatePage,
+    IntroPage
+
   ],
   imports: [
     IonicModule.forRoot(MyApp, {
@@ -79,16 +84,17 @@ import { CommentData } from '../providers/comment-data';
     ReportPage,
     LeaderboardPage,
     CommentsPage,
-    CommentCreatePage
+    CommentCreatePage,
+    IntroPage
     
   ],
   providers: [
+      Storage,
       {provide: ErrorHandler, useClass: IonicErrorHandler}, 
       AuthData, 
       ProfileData, 
       PostData,
-      CommentData,
-      
+      CommentData
   ]
 })
 export class AppModule {}

@@ -67,7 +67,7 @@ export class HomePage {
       this.nav.setRoot(LoginPage);
     });
   }
-  
 
+  
 
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-
+import { Storage } from '@ionic/storage';
+import { NavController } from 'ionic-angular';
+import { IntroPage } from '../intro/intro';
 
 import { HomePage } from '../home/home';
 import { ProfilePage } from '../profile/profile';
@@ -19,8 +21,6 @@ export class TabsPage {
   tab4Root: any = TasksPage;
   tab5Root: any = CameraPage;
 
-  constructor() {
+  constructor() {}
 
-  }
-  
 }

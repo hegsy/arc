@@ -12,7 +12,7 @@
         <ion-title>Tasks</ion-title>
     <ion-buttons end>
         <button ion-button (click)="goToReport()">
-        <ion-img class="reportcardicon" src="assets/icon/hat_icon.png"></ion-img>
+        <ion-img class="reportcardicon" src="assets/icon/ic_school_white_18dp_2x.png"></ion-img>
         </button>
     </ion-buttons>
   </ion-navbar>
@@ -24,7 +24,7 @@
             <ion-grid>
                 <ion-row center>
                     <ion-col>
-                        <ion-card (click)="goToTaskList(artasks)">     <ion-card-content>
+                        <ion-card tappable (click)="goToTaskList(artasks)">     <ion-card-content>
                                  <ion-badge color="accent">5</ion-badge>
                                 <img src="assets/icon/task_icon_findthecode.png">
                                <p>Code</p> 
@@ -32,7 +32,7 @@
                         </ion-card>
                     </ion-col>
                     <ion-col>
-                        <ion-card (click)="goToTaskList(socialtasks)">                           
+                        <ion-card tappable (click)="goToTaskList(socialtasks)">                           
                             <ion-card-content>
                                 <ion-badge color="accent">4</ion-badge>
                                 <img src="assets/icon/task_icon_addfriends.png">
@@ -43,7 +43,7 @@
                     </ion-row>
                 <ion-row center>
                     <ion-col>
-                        <ion-card>                           
+                        <ion-card tappable (click)="goToTaskList(clubtasks)">                           
                             <ion-card-content>
                                 <ion-badge color="accent">3</ion-badge>
                                 <img src="assets/icon/task_icon_clubs.png">
@@ -52,7 +52,7 @@
                         </ion-card>
                     </ion-col>
                     <ion-col>
-                        <ion-card>                           
+                        <ion-card tappable (click)="goToTaskList(exploretasks)">                           
                             <ion-card-content>
                                 <ion-badge color="accent">4</ion-badge>
                                 <img src="assets/icon/task_icon_explore.png">
@@ -63,7 +63,7 @@
                     </ion-row>
                 <ion-row center>
                     <ion-col>
-                        <ion-card>                           
+                        <ion-card tappable (click)="goToTaskList(foodtasks)">                           
                             <ion-card-content>
                                 <ion-badge color="accent">5</ion-badge>
                                 <img src="assets/icon/task_icon_foodanddrink.png">
@@ -72,7 +72,7 @@
                         </ion-card>
                     </ion-col>
                     <ion-col>
-                        <ion-card>                           
+                        <ion-card tappable (click)="goToTaskList(campustasks)">                           
                             <ion-card-content>
                                 <ion-badge color="accent">7</ion-badge>
                                 <img src="assets/icon/task_icon_campus.png">

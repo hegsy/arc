@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
+import { IntroPage } from '../pages/intro/intro';
+import { LoadingController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import firebase from 'firebase';
 
@@ -16,8 +19,9 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 export class MyApp {
   rootPage: any = TabsPage; 
+  loader: any;
     
-  constructor(platform: Platform) {
+  constructor(platform: Platform, public loadingCtrl: LoadingController, public storage: Storage) {
   
   
       firebase.initializeApp({
@@ -36,6 +40,22 @@ export class MyApp {
     });
     
     platform.ready().then(() => {
+      //remove this line before build
+      this.storage.set('introShown', false);
+
+      this.storage.get('introShown').then((result) => {
+ 
+        if(result){
+          this.rootPage = TabsPage;
+        } else {
+          this.rootPage = IntroPage;
+          this.storage.set('introShown', true);
+        }
+ 
+ 
+      });
+ 
+   
     
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

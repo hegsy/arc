@@ -1,0 +1,10 @@
+page-intro {
+	ion-slide {
+      background-color: map-get($colors, primary);
+    }
+ 
+    ion-slide img {
+      height: 70vh !important;
+      width: auto !important;
+    }
+}

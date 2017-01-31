@@ -8,6 +8,7 @@ page-home {
     
     .logo_header {
         margin-right: 45px;
+        
     }
     
     .label {
@@ -21,18 +22,43 @@ page-home {
     .item-divider {
         border-bottom: 1px solid #303f9f;
     }
-//    
-//    .header  {
-//        height: 70px;
-//    }
-//    
-//    .toolbar {
-//        height: 70px;  
-//    }
+   
+   .toolbar {
+      
+          text-align: center;
+    }
     
     ion-note {
         font-size: 12px;
     }
 
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translate3d(0,0,0);
+  }
+ 
+  25% {
+    -webkit-transform: translate3d(0,-30%,0);
+  }
+ 
+  50% {
+    -webkit-transform: translate3d(0,0,0);
+  }
+ 
+  75% {
+    -webkit-transform: translate3d(0,-30%,0);
+  }
+ 
+  100% {
+    -webkit-transform: translate3d(0,0,0);
+  }
+}
+ 
+.bounce-animation {
+  -webkit-animation: bounce ease-in 1; 
+  animation: bounce ease-in 1;
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms;
+}
 
 }

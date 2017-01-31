@@ -4,19 +4,35 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<link href="assets/css/animate.css" rel="stylesheet">
 <ion-header>
 
   <ion-navbar>
     <ion-title>Posts</ion-title>
+
+      <ion-buttons end>
+      <button ion-button icon-only (click)="goToCreate()"><ion-icon name="add"></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-navbar>
+
+
 
 </ion-header>
 
 
-<ion-content>
+<ion-content >
+<ion-refresher (ionRefresh)="doRefresh($event)">
+<!--     <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Fetching Posts...">
+    </ion-refresher-content> -->
+  </ion-refresher>
     <ion-list>
-        <ion-item-sliding *ngFor="let post of postList">
-        <ion-item>
+        <ion-item-sliding  *ngFor="let post of postList">
+        <ion-item class="animated bounceInLeft">
             <ion-avatar item-left>
                 <img src="assets/img/girl_avatar.png"/>
             </ion-avatar>
@@ -55,4 +71,7 @@
             </ion-item-options>
         </ion-item-sliding>    
   </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
 </ion-content>

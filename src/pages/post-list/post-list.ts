@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { PostDetailPage } from '../post-detail/post-detail';
 
+import { PostCreatePage } from '../post-create/post-create';
 import { CommentsPage } from '../comments/comments';
 
 import { AuthData } from '../../providers/auth-data';
@@ -27,6 +28,10 @@ export class PostListPage {
   }
   
   ionViewDidLoad (){
+    this.getPosts();
+  }
+
+  getPosts(){
     this.postData.getPostList().orderByChild("dateCreated").on('value', snapshot => {
         let rawList = [];
         snapshot.forEach( snap => {
@@ -71,7 +76,24 @@ let currentUser = this.authData.getLoggedInUser().uid;
     });
     toast.present();
 	                
-	        } 
+	        }
+
+goToCreate(){
+      this.nav.push(PostCreatePage);
+    } 
+
+  doRefresh(refresher) {
+    console.log('Begin async operation');
+    this.postData.getPostList();
+    setTimeout(()=> {
+      refresher.complete();
+    }, 1500);
+      
+    
+
+  }
+
+
 
 }
 
