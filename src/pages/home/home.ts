@@ -6,6 +6,8 @@ import { LoginPage } from '../login/login';
 import { TasksPage } from '../tasks/tasks';
 import { PostsPage } from '../posts/posts';
 import { PostDetailPage } from '../post-detail/post-detail';
+import { ReportPage } from '../report/report';
+import { LeaderboardPage } from '../leaderboard/leaderboard';
 
 import { AuthData } from '../../providers/auth-data';
 
@@ -29,8 +31,8 @@ export class HomePage {
     
     this.pages = [
         {title: "Login", component: LoginPage},
-        {title: "Report Card"},
-        {title: "Leaderboard"},
+        {title: "Report Card", component: ReportPage },
+        {title: "Leaderboard", component: LeaderboardPage },
         {title: "Bookmarks"},
         {title: "Settings"},
         {title: "Help"}

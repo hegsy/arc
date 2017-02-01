@@ -2,11 +2,24 @@ page-intro {
 	ion-slide {
       background-color: map-get($colors, primary);
     }
+
+    .slide2 {
+    	background-color: map-get($colors, accent);
+    }
+
+    .slide3 {
+    	background-color: map-get($postColors, infoBlue);
+    }
+
+    .slide4 {
+    	background-color: map-get($postColors, socialYellow);
+    }
  
      ion-slide img {
     //   height: 70vh !important;
     //   width: auto !important;
     	height: 40vh !important;
      }
+
 
 }

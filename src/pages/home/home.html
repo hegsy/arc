@@ -1,14 +1,15 @@
 <ion-menu [content]="mycontent" type="overlay" persistent="true">
     <ion-header>
-        <ion-toolbar>
-        <ion-title>Menu</ion-title>
-        </ion-toolbar>
+        
+        <img width="100" src="assets/img/girl_avatar.png"/>
+        <p>Anne-Marie</p>
     </ion-header>
+
     <ion-content>
-        <ion-list>
+        <ion-list no-lines>
             <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
     
-      <button ion-button (click)="logOut()">
+      <button ion-button block (click)="logOut()">
         <ion-icon name="log-out"></ion-icon>Log Out
       </button>
   

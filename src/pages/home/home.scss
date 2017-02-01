@@ -1,5 +1,22 @@
 page-home {
- 
+
+    ion-menu img {
+      padding-top: 20px;
+    }
+
+    ion-menu ion-list .item-inner {
+      padding: 10px;
+    }
+
+    ion-menu ion-list .item-block {
+      margin-top: 5px;
+    }
+
+    ion-menu ion-header {
+      text-align: center;
+      padding: 0;
+    }
+
     .icontext {
         text-align: center;
         font-size: 10px;

@@ -36,4 +36,8 @@ page-profile {
         font-family: 'Montserrat-Bold';
         font-size: 1.2em;
     }
+
+ion-item-options .button {
+  background-color: map-get($postColors, exploreGreen);
+}
 }
