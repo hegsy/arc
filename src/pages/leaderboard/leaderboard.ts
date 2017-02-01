@@ -13,7 +13,10 @@ import { NavController } from 'ionic-angular';
 })
 export class LeaderboardPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) {
+
+  	    
+  }
 
   ionViewDidLoad() {
     console.log('Hello LeaderboardPage Page');
