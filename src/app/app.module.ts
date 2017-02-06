@@ -26,6 +26,9 @@ import { CommentsPage } from '../pages/comments/comments';
 import { CommentCreatePage } from '../pages/comment-create/comment-create';
 import { IntroPage } from '../pages/intro/intro';
 
+import { AnimateItemSliding } from '../components/animate-item-sliding/animate-item-sliding';
+
+
 
 //import providers
 
@@ -55,7 +58,8 @@ import { CommentData } from '../providers/comment-data';
     LeaderboardPage,
     CommentsPage,
     CommentCreatePage,
-    IntroPage
+    IntroPage,
+    AnimateItemSliding
 
   ],
   imports: [

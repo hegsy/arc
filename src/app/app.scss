@@ -45,3 +45,27 @@ h1 {
     background-color: #fff;
 }
 
+@-webkit-keyframes slidingAnimation {
+  0% {
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+ 
+  50% {
+    transform: translate3d(-70px,0,0);
+    -webkit-transform: translate3d(-70px,0,0);
+  }
+ 
+  100% {
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+  }
+}
+ 
+.itemSlidingAnimation {
+    -webkit-animation: slidingAnimation;
+    animation: slidingAnimation;
+    -webkit-animation-duration: 1000ms;
+    animation-duration: 1000ms;
+}
+

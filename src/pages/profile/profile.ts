@@ -29,6 +29,10 @@ export class ProfilePage {
   }
   
   ionViewDidLoad () {
+    this.getProfileDetails();
+  }
+
+  getProfileDetails(){
     this.profileData.getUserProfile().on('value', (data) => {
       this.userProfile = data.val();
     });
@@ -59,7 +63,7 @@ goToPostDetail(postId){
 
 deletePost(postId) {
     this.postData.deletePost(postId).then(() => {
-        this.nav.pop();
+        this.nav.push(ProfilePage);
        
     });
 }

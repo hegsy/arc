@@ -4,7 +4,7 @@
     
     <button ion-button icon-only menuToggle><ion-icon name="menu"></ion-icon></button>
        
-    <ion-title>Me</ion-title>
+    <ion-title *ngIf="userProfile?.firstName">{{userProfile?.firstName}}</ion-title>
  <ion-buttons end>
       <button ion-button icon-only (click)="goToEdit()">
         <ion-icon name="create"></ion-icon>
@@ -19,10 +19,11 @@
         <ion-grid>
             <ion-row>
               <ion-col baseline>
-                <button ion-button round color="accent">
+                <button ion-button icon-only round color="accent">
                   <ion-icon name="person"></ion-icon>
-<!--                <ion-badge>260</ion-badge>-->
+<!--                <ion-badge>260</ion-badge>-->                 
                 </button>
+                <ion-note>40</ion-note>
               </ion-col> 
               
             <ion-col width-50>
@@ -30,10 +31,11 @@
             </ion-col> 
               
                 <ion-col baseline>
-                <button ion-button round color="accent">
+                <button ion-button round icon-only color="accent">
                   <ion-icon name="bookmark"></ion-icon>
 <!--                    <ion-badge>260</ion-badge>-->
               </button>
+              <ion-note>2500</ion-note>
               </ion-col> 
           </ion-row>
 
@@ -95,7 +97,7 @@
                 <button ion-button icon-only>
                     <ion-icon name="create"></ion-icon>
                 </button>
-                <button ion-button icon-only>
+                <button ion-button icon-only (click)="deletePost(post.id)">
                     <ion-icon name="trash"></ion-icon>
                 </button>
             </ion-item-options>
