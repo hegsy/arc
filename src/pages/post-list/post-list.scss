@@ -3,5 +3,26 @@ page-post-list {
         font-size: 12px;
     }
 
+    ion-item ion-label {
+    margin: 5px !important;
+  }
+
+  ion-list {
+    margin: 0;
+    padding: 0;
+  }
+
+  ion-item {
+    padding: 0;
+  }
+
+  .item-inner {
+    border: none !important;
+    padding: 0;
+  }
+
+  ion-item-options .button {
+  background-color: map-get($postColors, exploreGreen);
+}
 
 }

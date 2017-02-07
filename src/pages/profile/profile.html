@@ -1,6 +1,6 @@
 <link href="assets/css/animate.css" rel="stylesheet">
 <ion-menu [content]="mycontent" type="overlay" persistent="true" id="profilemenu">
-    <ion-header>
+    <ion-header (click)="goToProfile()">
         
         <img width="100" src="assets/img/girl_avatar.png"/>
         <p>Anne-Marie</p>
@@ -40,7 +40,7 @@
         <ion-grid>
             <ion-row>
               <ion-col baseline>
-                <button ion-button icon-only round color="accent">
+                <button class="profileBadge" ion-button icon-only round>
                   <ion-icon name="person"></ion-icon>
 <!--                <ion-badge>260</ion-badge>-->                 
                 </button>
@@ -52,7 +52,7 @@
             </ion-col> 
               
                 <ion-col baseline>
-                <button ion-button round icon-only color="accent">
+                <button class="profileBadge" ion-button round icon-only>
                   <ion-icon name="bookmark"></ion-icon>
 <!--                    <ion-badge>260</ion-badge>-->
               </button>
@@ -84,8 +84,9 @@
        My Posts
         </ion-item-divider>
         
-        <ion-item-sliding *ngFor="let post of postList">
-        <ion-item  (click)="goToPostDetail(post.id)">
+        <ion-item-sliding *ngFor="let post of postList" >
+        <ion-item>
+        <ion-item (click)="goToPostDetail(post.id)">
             <ion-avatar item-left>
                 <img src="assets/img/girl_avatar.png"/>
             </ion-avatar>
@@ -93,7 +94,7 @@
             <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
             <p>{{post?.tag}}</p>
             <p>{{post?.content}}</p>
-
+        </ion-item>
             <ion-row>
                 <ion-col>
                   <button ion-button icon-left clear small color="accent">
@@ -102,7 +103,7 @@
                   </button>
                 </ion-col>
                 <ion-col>
-                  <button ion-button icon-left clear small color="accent">
+                  <button ion-button tappable icon-left clear small color="accent" (click)="goToComments()">
                     <ion-icon name="text"></ion-icon>
                     <div>4</div>
                   </button>

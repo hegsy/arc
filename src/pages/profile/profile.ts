@@ -6,6 +6,7 @@ import { PostDetailPage } from '../post-detail/post-detail';
 import { ReportPage } from '../report/report';
 import { LeaderboardPage } from '../leaderboard/leaderboard';
 import { LoginPage } from '../login/login';
+import { CommentsPage } from '../comments/comments';
 
 import { ProfileData } from '../../providers/profile-data';
 import { AuthData } from '../../providers/auth-data';
@@ -102,6 +103,14 @@ deletePost(postId) {
       this.nav.setRoot(LoginPage);
     });
   }
+
+   goToComments(){
+    this.nav.push(CommentsPage);
+  }
+
+      goToProfile(){
+        this.nav.push(ProfilePage);
+    }
     
 }
     

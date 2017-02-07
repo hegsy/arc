@@ -84,16 +84,16 @@ goToCreate(){
       this.nav.push(PostCreatePage);
     } 
 
-  // doRefresh(refresher) {
-  //   console.log('Begin async operation');
-  //   this.postData.getPostList();
-  //   setTimeout(()=> {
-  //     refresher.complete();
-  //   }, 1500);
+  doRefresh(refresher) {
+    console.log('Begin async operation');
+    this.postData.getPostList();
+    setTimeout(()=> {
+      refresher.complete();
+    }, 1500);
       
     
 
-  // }
+  }
 
 
 

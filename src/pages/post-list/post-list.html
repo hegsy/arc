@@ -16,10 +16,7 @@
     </ion-buttons>
   </ion-navbar>
 
-
-
 </ion-header>
-
 
 <ion-content >
 <ion-refresher (ionRefresh)="doRefresh($event)">
@@ -30,17 +27,20 @@
       refreshingText="Fetching Posts...">
     </ion-refresher-content>
   </ion-refresher>
-    <ion-list>
+
+<!--     <ion-list>
+    <ion-item-group>
         <ion-item-sliding *ngFor="let post of postList">
         <ion-item class="animated bounceInLeft">
+        <ion-item (click)="goToPostDetail(post.id)">
             <ion-avatar item-left>
                 <img src="assets/img/girl_avatar.png"/>
             </ion-avatar>
-            <h2 (click)="goToPostDetail(post.id)">{{post?.name}}</h2>
+            <h2>{{post?.name}}</h2>
             <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
             <p>{{post?.tag}}</p>
             <p>{{post?.content}}</p>
-
+          </ion-item>
             <ion-row>
                 <ion-col>
                   <button ion-button icon-left clear small color="accent" >
@@ -49,7 +49,7 @@
                   </button>
                 </ion-col>
                 <ion-col>
-                  <button ion-button icon-left clear small color="accent" (click)="goToComments()">
+                  <button ion-button tappable icon-left clear small color="accent" (click)="goToComments()">
                     <ion-icon name="text"></ion-icon>
                     <div>4</div>
                   </button>
@@ -60,6 +60,7 @@
                   </ion-note>
                 </ion-col>
             </ion-row>
+
         </ion-item>
             <ion-item-options>
                 <button ion-button icon-only (click)="addPostToFavorites(post.id)">
@@ -69,9 +70,54 @@
                     <ion-icon name="trash"></ion-icon>
                 </button>
             </ion-item-options>
-        </ion-item-sliding>    
-  </ion-list>
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        </ion-item-sliding>   
+        </ion-item-group> 
+  </ion-list> -->
+  <ion-list>
+        <ion-item-group>        
+        <ion-item-sliding *ngFor="let post of postList" >
+        <ion-item>
+        <ion-item (click)="goToPostDetail(post.id)">
+            <ion-avatar item-left>
+                <img src="assets/img/girl_avatar.png"/>
+            </ion-avatar>
+            <h3>{{post?.name}}</h3>
+            <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
+            <p>{{post?.tag}}</p>
+            <p>{{post?.content}}</p>
+        </ion-item>
+            <ion-row class="postMeta">
+                <ion-col>
+                  <button ion-button icon-left clear small color="accent">
+                    <ion-icon name="thumbs-up"></ion-icon>
+                    <div>12</div>
+                  </button>
+                </ion-col>
+                <ion-col>
+                  <button ion-button tappable icon-left clear small color="accent" (click)="goToComments()">
+                    <ion-icon name="text"></ion-icon>
+                    <div>4</div>
+                  </button>
+                </ion-col>
+                <ion-col center text-center>
+                  <ion-note>
+                     {{post?.dateCreated | date: 'shortTime' }}
+                  </ion-note>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+            <ion-item-options>
+                <button ion-button icon-only (click)="addPostToFavorites(post.id)">
+                    <ion-icon name="star"></ion-icon>
+                </button>
+                <button ion-button icon-only>
+                    HIDE
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>  
+            </ion-item-group>
+    </ion-list>
+  <!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
    <ion-infinite-scroll-content></ion-infinite-scroll-content>
- </ion-infinite-scroll>
+ </ion-infinite-scroll> -->
 </ion-content>
