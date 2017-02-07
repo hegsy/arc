@@ -1,4 +1,4 @@
-<ion-menu [content]="mycontent" type="overlay" persistent="true">
+<ion-menu [content]="mycontent" type="overlay" persistent="true" id="homemenu">
     <ion-header>
         
         <img width="100" src="assets/img/girl_avatar.png"/>
@@ -43,7 +43,7 @@
                     <ion-icon item-left name="calendar">
                     </ion-icon>
                     <h2>Freshers Quiz</h2>
-                    <p><ion-icon name="pin"></ion-icon>Student Union</p>
+                    <p><ion-icon name="pin"></ion-icon>&nbsp;Student Union</p>
                     <ion-note>31 Jan 2017</ion-note>
                     <ion-avatar item-right class="bounce-animation">
                 <img src="assets/img/girl_avatar.png"/>
@@ -106,11 +106,12 @@
                 <img src="assets/img/girl_avatar.png"/>
             </ion-avatar>
             <h2>{{post?.name}}</h2>
-            <p>{{post?.category}}</p>
-<!--            <p>{{post?.tag}}</p>-->
+            <!-- <p>{{post?.category}}</p> -->
+            <p>{{post?.tag}}</p>
             <p>{{post?.content}}</p>
+            
+            <img item-right src="assets/icon/cat_icon_social.png" width="32"/>
 
-<!--
             <ion-row>
                 <ion-col>
                   <button ion-button icon-left clear small color="accent">
@@ -130,9 +131,9 @@
                   </ion-note>
                 </ion-col>
             </ion-row>
--->
+
         </ion-item>
-<!--
+
             <ion-item-options>
                 <button ion-button icon-only>
                     <ion-icon name="star"></ion-icon>
@@ -141,7 +142,7 @@
                     <ion-icon name="trash"></ion-icon>
                 </button>
             </ion-item-options>
--->
+
         </ion-item-sliding> 
         
         </ion-item-group>

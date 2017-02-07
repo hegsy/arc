@@ -12,6 +12,10 @@ page-report {
         margin-top: 10px;
         text-align: center;
     }
+
+    .creditAmount {
+        font-size: 2.4em;
+    }
     
     ion-col {
         margin: 10px;
@@ -20,7 +24,7 @@ page-report {
     }
     
     .reportTask {
-        width: 45px;
+        width: 40px;
     }
     
     ion-row {
@@ -29,6 +33,11 @@ page-report {
     
     .shareReport {
         height: 40px;
+    }
+
+    ion-icon {
+        font-size: 2.4em;
+
     }
 
 }

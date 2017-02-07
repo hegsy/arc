@@ -1,8 +1,11 @@
-import { NavController } from 'ionic-angular';
+import { NavController, MenuController } from 'ionic-angular';
 import { Component } from '@angular/core';
 
 import { EditProfilePage } from '../edit-profile/edit-profile';
 import { PostDetailPage } from '../post-detail/post-detail';
+import { ReportPage } from '../report/report';
+import { LeaderboardPage } from '../leaderboard/leaderboard';
+import { LoginPage } from '../login/login';
 
 import { ProfileData } from '../../providers/profile-data';
 import { AuthData } from '../../providers/auth-data';
@@ -18,13 +21,30 @@ export class ProfilePage {
     public userProfile: any;
 
     public postList: any;
+
+    pages: any[];
     
 
   constructor(public nav: NavController, public profileData: ProfileData,
-    public authData: AuthData, public postData: PostData) {
+    public authData: AuthData, public postData: PostData, public menu: MenuController) {
     
+    this.menu = menu;
     this.postData = postData;
     
+        this.pages = [
+        {title: "Login", component: LoginPage},
+        {title: "Report Card", component: ReportPage },
+        {title: "Leaderboard", component: LeaderboardPage },
+        {title: "Bookmarks"},
+        {title: "Settings"},
+        {title: "Help"}
+    ];
+    
+  }
+
+  ionViewDidEnter() {
+    // Use the id to enable/disable the menus
+    this.menu.enable(true, 'profilemenu');
     
   }
   
@@ -71,6 +91,17 @@ deletePost(postId) {
     goToEdit(){
       this.nav.push(EditProfilePage);
     }
+
+        openPage(page) {
+        this.menu.close();
+        this.nav.push(page.component);
+    }
+    
+      logOut(){
+    this.authData.logoutUser().then(() => {
+      this.nav.setRoot(LoginPage);
+    });
+  }
     
 }
     

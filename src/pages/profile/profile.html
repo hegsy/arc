@@ -1,8 +1,29 @@
 <link href="assets/css/animate.css" rel="stylesheet">
-<ion-header>
-    <ion-navbar>
+<ion-menu [content]="mycontent" type="overlay" persistent="true" id="profilemenu">
+    <ion-header>
+        
+        <img width="100" src="assets/img/girl_avatar.png"/>
+        <p>Anne-Marie</p>
+    </ion-header>
+
+    <ion-content>
+        <ion-list no-lines>
+            <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">{{p.title}}</button>
     
-    <button ion-button icon-only menuToggle><ion-icon name="menu"></ion-icon></button>
+      <button ion-button block (click)="logOut()">
+        <ion-icon name="log-out"></ion-icon>Log Out
+      </button>
+  
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-header>
+    <ion-navbar #mycontent swipeBackEnabled="false">
+    
+   <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+    </button>
        
     <ion-title *ngIf="userProfile?.firstName">{{userProfile?.firstName}}</ion-title>
  <ion-buttons end>
