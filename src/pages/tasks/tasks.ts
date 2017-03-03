@@ -23,12 +23,12 @@ export class TasksPage {
 
 
         this.artasks = [
-        {title: "Library", desc: "Add a Photo to your Profile", credits: 100},
-        {title: "Canteen", desc: "Add a Photo to your Profile", credits: 100},
-        {title: "Health", desc: "Add Friends on the same Course", credits: 100},
-        {title: "Computers", desc: "Add Friends on a different Course", credits: 100},
-        {title: "Counselling", desc: "Add a Photo to your Profile", credits: 100},
-        {title: "Careers", desc: "Add a Photo to your Profile", credits: 100}
+        {title: "Library", desc: "Scan Poster for More Information", credits: 100},
+        {title: "Canteen", desc: "Scan Poster for More Information", credits: 100},
+        {title: "Health", desc: "Scan Poster for More Information", credits: 100},
+        {title: "Computers", desc: "Scan Poster for More Information", credits: 100},
+        {title: "Counselling", desc: "Scan Poster for More Information", credits: 100},
+        {title: "Careers", desc: "Scan Poster for More Information", credits: 100}
     ];
 
         this.socialtasks = [

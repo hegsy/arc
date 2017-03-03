@@ -40,13 +40,11 @@ export class HomePage {
     
  
   }
-
   ionViewDidEnter() {
     // Use the id to enable/disable the menus
     this.menu.enable(true, 'homemenu');
     
   }
-
     goToProfile(){
         this.nav.push(ProfilePage);
     }
@@ -74,8 +72,6 @@ export class HomePage {
     this.authData.logoutUser().then(() => {
       this.nav.setRoot(LoginPage);
     });
-  }
-
-  
+  }  
 
 }

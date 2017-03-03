@@ -7,6 +7,8 @@ export class AuthData {
 
     public fireAuth: any;
     public userProfile: any;
+    
+    public credits: any;
 
   constructor() {
     console.log('Hello AuthData Provider');
@@ -15,6 +17,7 @@ export class AuthData {
     
     this.fireAuth = firebase.auth();
     this.userProfile = firebase.database().ref('/userProfile');
+
   }
   
   loginUser(email: string, password: string): any {

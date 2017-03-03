@@ -22,7 +22,7 @@ export class ProfilePage {
     public userProfile: any;
 
     public postList: any;
-
+    currentCredits: any;
     pages: any[];
     
 
@@ -51,6 +51,11 @@ export class ProfilePage {
   
   ionViewDidLoad () {
     this.getProfileDetails();
+//     var userId = firebase.auth().currentUser.uid;
+// return firebase.database().ref('/userProfile/' + userId).once('value').then(function(snapshot) {
+//     this.currentCredits = snapshot.val().credits;
+//   // ...
+// });
   }
 
   getProfileDetails(){
@@ -110,6 +115,20 @@ deletePost(postId) {
 
       goToProfile(){
         this.nav.push(ProfilePage);
+    }
+
+    addCreditsToProfile(credits) {
+
+let currentUser = this.authData.getLoggedInUser().uid;
+
+ this.profileData.addCreditsToProfile(currentUser, credits);
+                  
+          }
+
+  updateCredits(credits: number) {
+  //this.favorites = firebase.database().ref('userProfile/' + this.currentUser + '/favorites' + postid);
+  //return this.favorites.set(true);
+      this.profileData.updateCreditsOnProfile(credits);
     }
     
 }
