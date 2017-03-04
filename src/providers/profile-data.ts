@@ -12,8 +12,6 @@ export class ProfileData {
 
 
   constructor() {
-
-    console.log('Hello ProfileData Provider');
     
     this.currentUser = firebase.auth().currentUser;
     this.userProfile = firebase.database().ref('/userProfile');
@@ -81,14 +79,14 @@ getFirstName(firstName){
         return this.usersRef.child(userid + '/credits').set(credits);
     }
 
-    updateCredits(credits: number) {
-        //this.favorites = firebase.database().ref('userProfile/' + this.currentUser + '/favorites' + postid);
+    // updateCredits(credits: number) {
+    //     //this.favorites = firebase.database().ref('userProfile/' + this.currentUser + '/favorites' + postid);
         
-        //return this.favorites.set(true);
-        this.usersRef.on('value', snap => console.log(snap.val()));
+    //     //return this.favorites.set(true);
+    //     this.usersRef.on('value', snap => console.log(snap.val()));
 
-        return this.usersRef.child(this.currentUser.uid).update({credits: credits});
-    }
+    //     return this.usersRef.child(this.currentUser.uid).update({credits: credits});
+    // }
 
     updateCreditsOnProfile(newCredits: number){
       var databaseRef = this.usersRef.child(this.currentUser.uid + '/credits');

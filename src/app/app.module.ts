@@ -25,6 +25,7 @@ import { LeaderboardPage } from '../pages/leaderboard/leaderboard';
 import { CommentsPage } from '../pages/comments/comments';
 import { CommentCreatePage } from '../pages/comment-create/comment-create';
 import { IntroPage } from '../pages/intro/intro';
+import { OpenTaskPage } from '../pages/open-task/open-task';
 
 
 //import providers
@@ -55,7 +56,8 @@ import { CommentData } from '../providers/comment-data';
     LeaderboardPage,
     CommentsPage,
     CommentCreatePage,
-    IntroPage
+    IntroPage,
+    OpenTaskPage
 
   ],
   imports: [
@@ -85,7 +87,8 @@ import { CommentData } from '../providers/comment-data';
     LeaderboardPage,
     CommentsPage,
     CommentCreatePage,
-    IntroPage
+    IntroPage,
+    OpenTaskPage
     
   ],
   providers: [
