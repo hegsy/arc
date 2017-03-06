@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 import { IntroPage } from '../pages/intro/intro';
 import { LoadingController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { CameraPreview } from 'ionic-native';
 
 import firebase from 'firebase';
 
@@ -63,6 +64,27 @@ export class MyApp {
       Splashscreen.hide();
       StatusBar.overlaysWebView(true); 
       StatusBar.backgroundColorByHexString('#303f9f');
+
+
+      let tapEnabled: any = false;
+      let dragEnabled: any = false;
+      let toBack: any = true;
+      let alpha = 1;
+      let rect: any = {
+        x: 0, 
+        y: 0, 
+        width: platform.width(), 
+        height: platform.height()
+      };
+ 
+      CameraPreview.startCamera(
+        rect,
+        'rear',
+        tapEnabled,
+        dragEnabled,
+        toBack,
+        alpha
+      );
     });
     
 

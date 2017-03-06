@@ -15,12 +15,12 @@ export class TaskListPage {
   constructor(public nav: NavController, public navParams: NavParams) {
 
   this.artasks = [
-        {id: 1, title: "Library", desc: "Scan Poster for More Information", credits: 100},
-        {id: 2, title: "Canteen", desc: "Scan Poster for More Information", credits: 100},
-        {id: 3, title: "Health", desc: "Scan Poster for More Information", credits: 100},
-        {id: 4, title: "Computers", desc: "Scan Poster for More Information", credits: 100},
-        {id: 5, title: "Counselling", desc: "Scan Poster for More Information", credits: 100},
-        {id: 6, title: "Careers", desc: "Scan Poster for More Information", credits: 100}
+        {id: 0, title: "Library", desc: "Scan Poster for More Information", credits: 100},
+        {id: 1, title: "Canteen", desc: "Scan Poster for More Information", credits: 100},
+        {id: 2, title: "Health", desc: "Scan Poster for More Information", credits: 100},
+        {id: 3, title: "Computers", desc: "Scan Poster for More Information", credits: 100},
+        {id: 4, title: "Counselling", desc: "Scan Poster for More Information", credits: 100},
+        {id: 5, title: "Careers", desc: "Scan Poster for More Information", credits: 100}
     ];
 
   	this.navParams = navParams;

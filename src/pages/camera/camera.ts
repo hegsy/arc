@@ -19,4 +19,7 @@ export class CameraPage {
     console.log('Hello CameraPage Page');
   }
 
+refresh(){
+    window['location'].reload();
+  }
 }

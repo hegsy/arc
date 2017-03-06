@@ -21,7 +21,7 @@ export class OpenTaskPage {
     this.task = navParams.get('taskCategory');
     var taskid = this.navParams.get('taskId');
     console.log(this.navParams.get('taskId'));
-    this.currentTask = this.task[taskid-1];
+    this.currentTask = this.task[taskid];
     console.log(this.currentTask);
     console.log(this.task[taskid]);
   }

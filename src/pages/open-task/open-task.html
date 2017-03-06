@@ -4,6 +4,7 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<link href="assets/css/animate.css" rel="stylesheet">
 <ion-header>
 
   <ion-navbar>
@@ -13,19 +14,35 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
-<!-- <ion-card><ion-card-title>Hi </ion-card-title></ion-card>
- -->
-        <ion-card>
-        <ion-item>
-            <!-- <ion-icon item-left name="camera"></ion-icon> -->
-            <h2 class="animate-in-primary">{{currentTask.title}}</h2>
-            <p>{{currentTask.desc}}</p>
-            <button ion-button clear item-right class="animate-in-secondary">
-            <ion-badge color="accent">{{currentTask.credits}}</ion-badge>
-            </button>
-        </ion-item>
-        </ion-card>
+  <ion-card>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <img src="assets/img/library_task.png"/>
+      </ion-col>
+    </ion-row>
+    <ion-card-content>
+    <ion-card-title>
+    {{currentTask.title}}
+    </ion-card-title>
+    <p>
+    {{currentTask.desc}}
+    </p>
+    </ion-card-content>
+
+    
+
+    <ion-item>
+    <ion-label>Complete</ion-label>
+    <ion-checkbox color="primary" checked="false"></ion-checkbox>
+    <ion-badge class="animated tada" color="accent" item-right>{{currentTask.credits}}</ion-badge>
+    </ion-item>
+
+    </ion-grid>
+ 
+  </ion-card>
 
 </ion-content>
