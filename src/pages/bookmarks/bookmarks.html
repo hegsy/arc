@@ -15,4 +15,22 @@
 
 <ion-content padding>
 
+<ion-grid>
+	<ion-row>
+		<ion-col>
+			<img class="logo_header" src="assets/img/arc_logo_white.png"/>
+		</ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col>
+			<h2>You don't have any bookmarks yet.</h2>
+			<p>Start completing tasks to save bookmarks.</p>
+		</ion-col>
+	</ion-row>
+</ion-grid>
+
+<ion-card *ngIf="bookmarkNo > 0">
+	<ion-card-title>Library Bookmark</ion-card-title>
+</ion-card>
+
 </ion-content>

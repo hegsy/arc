@@ -7,12 +7,11 @@
 <ion-header>
 
   <ion-navbar>
-        <button start ion-button icon-only menuToggle><ion-icon name="menu"></ion-icon>
-        </button>
+        <!-- <button start ion-button icon-only menuToggle><ion-icon name="menu"></ion-icon></button> -->
         <ion-title>Tasks</ion-title>
     <ion-buttons end>
         <button ion-button (click)="goToReport()">
-        <ion-img class="reportcardicon" src="assets/icon/hat_icon.png"></ion-img>
+        <img class="reportcardicon" src="assets/icon/hat_icon.png"/>
         </button>
     </ion-buttons>
   </ion-navbar>
@@ -24,7 +23,8 @@
             <ion-grid>
                 <ion-row center>
                     <ion-col>
-                        <ion-card tappable (click)="goToTaskList(artasks)">     <ion-card-content>
+                        <ion-card tappable (click)="goToTaskList(artasks)">     
+                        <ion-card-content>
                                  <ion-badge color="accent">5</ion-badge>
                                 <img src="assets/icon/task_icon_findthecode.png">
                                <p>Code</p> 

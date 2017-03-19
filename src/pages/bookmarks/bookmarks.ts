@@ -13,7 +13,12 @@ import { NavController } from 'ionic-angular';
 })
 export class BookmarksPage {
 
-  constructor(public navCtrl: NavController) {}
+	bookmarkNo: number;
+
+  constructor(public navCtrl: NavController) {
+
+  	this.bookmarkNo = 0;
+  }
 
   ionViewDidLoad() {
     console.log('Hello BookmarksPage Page');

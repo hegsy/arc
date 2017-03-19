@@ -8,6 +8,8 @@ import { PostsPage } from '../posts/posts';
 import { PostDetailPage } from '../post-detail/post-detail';
 import { ReportPage } from '../report/report';
 import { LeaderboardPage } from '../leaderboard/leaderboard';
+import { BookmarksPage } from '../bookmarks/bookmarks';
+
 
 import { AuthData } from '../../providers/auth-data';
 
@@ -33,7 +35,7 @@ export class HomePage {
         {title: "Login", component: LoginPage},
         {title: "Report Card", component: ReportPage },
         {title: "Leaderboard", component: LeaderboardPage },
-        {title: "Bookmarks"},
+        {title: "Bookmarks", component: BookmarksPage },
         {title: "Settings"},
         {title: "Help"}
     ];
