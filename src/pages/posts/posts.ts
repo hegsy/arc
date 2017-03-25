@@ -9,6 +9,8 @@ import { PostCreatePage } from '../post-create/post-create';
 })
 export class PostsPage {
 
+  public swipe: number = 0;
+
   constructor(public nav: NavController) {}
 
   ionViewDidLoad() {
@@ -23,5 +25,9 @@ export class PostsPage {
     goToList(){
       this.nav.push(PostListPage);
     }
+
+      swipeEvent(e) {
+    this.swipe++
+  }
 
 }

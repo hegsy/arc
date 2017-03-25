@@ -23,6 +23,8 @@ page-post-list {
 
   ion-item-options .button {
   background-color: map-get($postColors, exploreGreen);
+  width: 60px;
+  
 }
 
 }

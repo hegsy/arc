@@ -24,8 +24,8 @@ export class CommentCreatePage {
     this.viewCtrl.dismiss();
   }
   
-  createComment(commentContent: string, author: string,  dateCreated: string) {
-    this.commentData.createComment(commentContent, author,  dateCreated).then(() => {
+  createComment(commentContent: string, author: string,  dateCreated: string, postId: string) {
+    this.commentData.createComment(commentContent, author,  dateCreated, postId).then(() => {
         this.nav.pop();
         
     });

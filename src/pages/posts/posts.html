@@ -25,7 +25,7 @@
         <ion-item-divider>
             Popular Categories
         </ion-item-divider>
-        <ion-item>
+        <ion-item (swipe) = "swipeEvent($event)">
             <ion-thumbnail item-left>
                 <img src="assets/icon/icon_cat_campus.png"/>
                 <p>Campus</p>
@@ -76,6 +76,9 @@
 
     <button ion-button block color="accent" (click)="goToList()">
       View All Posts
+    </button>
+<button ion-button block color="accent">
+      View Favourites
     </button>
     
 </ion-content>

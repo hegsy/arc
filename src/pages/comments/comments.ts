@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, NavParams} from 'ionic-angular';
 
 import { CommentCreatePage } from '../comment-create/comment-create';
 
@@ -13,10 +13,19 @@ import { CommentData } from '../../providers/comment-data';
 export class CommentsPage {
     
     public votes: any;
-
+    public currentPost: any;
     public comments: any;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public commentData: CommentData) {}
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, 
+    public commentData: CommentData, public navParams: NavParams) {
+
+    this.navParams = navParams;
+    this.commentData = commentData;
+
+    this.currentPost = this.navParams.get("postId");
+    console.log(this.currentPost + "post id");
+
+  }
 
   ionViewDidLoad (){
 
@@ -28,6 +37,7 @@ export class CommentsPage {
                 content: snap.val().content,
                 author: snap.val().author,
                 dateCreated: snap.val().dateCreated,
+                postId: this.currentPost,
                 votesUp: 1
             });
         });
@@ -35,11 +45,9 @@ export class CommentsPage {
     });
   }
 
-vote(commentid: string, like: boolean){
-        this.commentData.vote(commentid, like);
-    }
-    
-
+  vote(commentid: string, like: boolean){
+          this.commentData.vote(commentid, like);
+      }
 
   goToCreateComment(){
       

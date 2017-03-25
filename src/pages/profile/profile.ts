@@ -119,11 +119,11 @@ deletePost(postId) {
 
     addCreditsToProfile(credits) {
 
-let currentUser = this.authData.getLoggedInUser().uid;
+      let currentUser = this.authData.getLoggedInUser().uid;
 
- this.profileData.addCreditsToProfile(currentUser, credits);
-                  
-          }
+      this.profileData.addCreditsToProfile(currentUser, credits);
+        
+    }
 
   updateCredits(credits: number) {
   //this.favorites = firebase.database().ref('userProfile/' + this.currentUser + '/favorites' + postid);

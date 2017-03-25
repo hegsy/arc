@@ -14,6 +14,7 @@ public postList: any;
 public currentUser: any;
 public votes: any;
 commentsRef: any = firebase.database().ref('comments');
+postRef: any = firebase.database().ref('userProfile/' + this.currentUser + '/postList');
 
   constructor(public authData: AuthData) {
     console.log('Hello CommentData Provider');
@@ -21,23 +22,18 @@ commentsRef: any = firebase.database().ref('comments');
     this.comments = firebase.database().ref('/comments');
 
   }
-  
- 
-   
 
-
-createComment(commentContent: string, author: string,  dateCreated: string): any {
+createComment(commentContent: string, author: string,  dateCreated: string, postId: string): any {
     
     return this.comments.push({
         content: commentContent,
-        author: this.currentUser,
-   
-        dateCreated: new Date().toString()
+        author: this.currentUser,  
+        dateCreated: new Date().toString(),
+        postId: postId
+        
        }).then(newComment => {
     this.comments.child(newComment.key).child('id').set(newComment.key);
-    });
-    
-    
+    });   
 }
 
 vote(commentid: string, like: boolean):any {

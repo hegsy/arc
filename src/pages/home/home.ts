@@ -21,6 +21,7 @@ import { AuthData } from '../../providers/auth-data';
 export class HomePage {
     public postList: any;
     pages: any[];
+    public swipe: number = 0;
     
   constructor(public nav: NavController,public menu: MenuController, public authData: AuthData) {
     this.nav = nav;
@@ -28,7 +29,7 @@ export class HomePage {
    
     
     this.postList = [
-        { name : "First Post", category: "Social", dateCreated: "12 Dec", tag: "first", content: "This is my first post on ARC" }
+        { name : "Jersey Night", category: "Social", dateCreated: "12 Dec", tag: "jersey sport party", content: "This is my first post on ARC" }
     ];
     
     this.pages = [
@@ -75,5 +76,9 @@ export class HomePage {
       this.nav.setRoot(LoginPage);
     });
   }  
+
+  swipeEvent(e) {
+    this.swipe++
+  }
 
 }

@@ -18,13 +18,11 @@
     <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
 
       <ion-item>
-<!--        <ion-label stacked>Email</ion-label>-->
         <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)" placeholder="Your email address" [class.invalid]="!loginForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>
         <ion-icon name="mail" item-right color="dark"></ion-icon>
       </ion-item>
 
       <ion-item>
-<!--        <ion-label stacked>Password</ion-label>-->
         <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)" placeholder="Your password"  [class.invalid]="!loginForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
         <ion-icon name="lock" item-right color="dark"></ion-icon>
       </ion-item>

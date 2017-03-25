@@ -25,12 +25,15 @@ export class PostListPage {
     
   }
   
-  goToComments(){
-    this.nav.push(CommentsPage);
-  }
   
   ionViewDidLoad (){
     this.getPosts();
+  }
+
+  goToComments(postId){
+    this.nav.push(CommentsPage, {
+      postId: postId
+    });
   }
 
   getPosts(){
@@ -80,20 +83,19 @@ let currentUser = this.authData.getLoggedInUser().uid;
 	                
 	        }
 
-goToCreate(){
-      this.nav.push(PostCreatePage);
-    } 
+    goToCreate(){
+          this.nav.push(PostCreatePage);
+        } 
 
-  doRefresh(refresher) {
+
+doRefresh(refresher) {
     console.log('Begin async operation');
     this.postData.getPostList();
     setTimeout(()=> {
-      refresher.complete();
+    refresher.complete();
     }, 1500);
-      
-    
 
-  }
+}
 
 
 

@@ -15,7 +15,7 @@ page-report {
 
     .creditAmount {
         font-size: 2.4em;
-        color: #fcfcfc;
+        color: map-get($colors, darkprimary);
     }
     
     ion-col {
@@ -46,16 +46,16 @@ page-report {
         color: #ffdc00;
     }
 
-    .content {
-        background-color: #C5CAE9;
-    }
+    // .content {
+    //     background-color: #d9d9fc;
+    // }
 
-    h2, h4{
-        color: white;
+    h2{
+        color: map-get($colors, darkprimary);
     }
 
     .button {
-        background-color: map-get($postColors, exploreGreen);
+        background-color: map-get($postColors, infoBlue);
     }
     
 

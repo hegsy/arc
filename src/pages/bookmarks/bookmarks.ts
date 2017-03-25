@@ -1,27 +1,45 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the Bookmarks page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+import { BookmarkData } from '../../providers/bookmark-data';
+
 @Component({
   selector: 'page-bookmarks',
   templateUrl: 'bookmarks.html'
 })
 export class BookmarksPage {
 
-	bookmarkNo: number;
+  public bookmarks: any;
 
-  constructor(public navCtrl: NavController) {
-
-  	this.bookmarkNo = 0;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public bookmarkData: BookmarkData) {
+    this.navParams = navParams;
+    this.bookmarkData = bookmarkData;
   }
 
-  ionViewDidLoad() {
-    console.log('Hello BookmarksPage Page');
+  ionViewDidLoad (){
+
+    this.bookmarkData.getBookmarks().on('value', snapshot => {
+        let rawList = [];
+        snapshot.forEach( snap => {
+            rawList.push({
+                id:snap.key,
+                title: snap.val().title,
+                desc: snap.val().desc
+
+            });
+        });
+        this.bookmarks = rawList;
+    });
   }
+
+  deleteBookmark(bookmarkId) {
+    this.bookmarkData.deleteBookmark(bookmarkId).then(() => {
+        this.navCtrl.pop();
+        //to go back to TabsPage
+    });
+    
+
+      }
 
 }

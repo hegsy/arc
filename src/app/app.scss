@@ -27,11 +27,6 @@ h1 {
     font-size: 3.8rem;
 }
 
-.toolbar {
-   // text-align: center;    
-}
-
-
 .toolbar-background {
     background-image: url("../assets/img/headerimg.png");
     background-size: cover;   
@@ -41,8 +36,12 @@ h1 {
     color: white;
 }
 
+.card {
+    background-color: #fcfcfc;
+  }
+  
 .item {
-    background-color: #fff;
+    background-color: #fcfcfc;
 }
 
 @-webkit-keyframes slidingAnimation {

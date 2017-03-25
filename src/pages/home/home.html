@@ -24,7 +24,7 @@
             <ion-icon name="menu"></ion-icon>
     </button>
         
-        <img class="logo_header" src="assets/img/arc_logo_white.png" width="40"/>
+        <img class="logo_header" src="assets/img/home_logo_lg.png" width="72" />
       
     </ion-navbar>   
 </ion-header>
@@ -40,21 +40,23 @@
             </ion-item-divider>
             <ion-item>
                 <button ion-item detail-none>
-                    <ion-icon item-left name="calendar">
-                    </ion-icon>
+                <ion-avatar item-left>
+                <img src="assets/img/girl_avatar.png"/>
+            </ion-avatar>
+                    
                     <h2>Freshers Quiz</h2>
                     <p><ion-icon name="pin"></ion-icon>&nbsp;Student Union</p>
                     <ion-note>31 Jan 2017</ion-note>
-                    <ion-avatar item-right class="bounce-animation">
-                <img src="assets/img/girl_avatar.png"/>
-            </ion-avatar>
+                    <ion-icon item-right name="calendar">
+                    </ion-icon>
                 </button>
             </ion-item>
         </ion-item-group>
     </ion-list>
 
     <ion-list>
-        <ion-item-group>
+        <ion-item-group (swipe) = "swipeEvent($event)">
+        
             <ion-item-divider>
                 <h4>Tasks</h4>
                 <button class="viewall" ion-button icon-only clear item-right (click)="goToTasks()">
@@ -62,8 +64,8 @@
                 </button>
             </ion-item-divider>
             
-            <ion-item>
-                  
+            <ion-item >
+                 
             <ion-thumbnail item-left>
             <img src="assets/icon/task_icon_addfriends.png">
             <p class="icontext">Social</p>
@@ -85,8 +87,9 @@
             <img src="assets/icon/task_icon_findthecode.png">                 
             <p class="icontext">Code</p>
             </ion-thumbnail>
-                     
+                  
             </ion-item>
+            
         </ion-item-group>  
     </ion-list>
     
@@ -101,16 +104,17 @@
             </ion-item-divider>
         
             <ion-item-sliding *ngFor="let post of postList">
-        <ion-item  (click)="goToPostDetail(post.id)">
+        <ion-item>
+        <button ion-item detail-none>
             <ion-avatar item-left>
                 <img src="assets/img/girl_avatar.png"/>
             </ion-avatar>
             <h2>{{post?.name}}</h2>
             <!-- <p>{{post?.category}}</p> -->
             <p>{{post?.tag}}</p>
-            <p>{{post?.content}}</p>
+            <!-- <p>{{post?.content}}</p> -->
             
-            <img item-right src="assets/icon/cat_icon_social.png" width="32"/>
+            <img item-right src="assets/icon/cat_icon_social.png" width="24"/>
 
             <ion-row>
                 <ion-col>
@@ -131,7 +135,7 @@
                   </ion-note> -->
                 </ion-col>
             </ion-row>
-
+        </button>
         </ion-item>
 
             <ion-item-options>

@@ -13,7 +13,6 @@
 
 </ion-header>
 
-
 <ion-content>
 
   <ion-card>
@@ -25,9 +24,7 @@
       </ion-col>
     </ion-row>
     <ion-card-content>
-   <!--  <ion-card-title>
-    {{currentTask.title}}
-    </ion-card-title> -->
+
     <p>
     {{currentTask.desc}}
     </p>
@@ -36,9 +33,9 @@
     
 
     <ion-item>
-    <ion-label>Complete</ion-label>
-    <ion-checkbox color="primary" checked="false" (click)="updateCredits(100)"></ion-checkbox>
-    <ion-badge class="animated tada" color="accent" item-right>{{currentTask.credits}}</ion-badge>
+      <ion-label>Complete</ion-label>
+        <ion-checkbox color="primary" checked="false" disabled={{checkboxDisabled}} (click)="updateCredits(100)"></ion-checkbox>
+        <ion-badge class="animated tada" color="accent" item-right>{{currentTask.credits}}</ion-badge>
     </ion-item>
 
     </ion-grid>

@@ -3,7 +3,6 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Storage } from '@ionic/storage';
 
-
 //Import Pages 
 
 import { ProfilePage } from '../pages/profile/profile';
@@ -28,13 +27,13 @@ import { IntroPage } from '../pages/intro/intro';
 import { OpenTaskPage } from '../pages/open-task/open-task';
 import { BookmarksPage } from '../pages/bookmarks/bookmarks';
 
-
 //import providers
 
 import { AuthData } from '../providers/auth-data';
 import { PostData } from '../providers/post-data';
 import { ProfileData } from '../providers/profile-data';
 import { CommentData } from '../providers/comment-data';
+import { BookmarkData } from '../providers/bookmark-data';
 
 @NgModule({
   declarations: [
@@ -100,7 +99,8 @@ import { CommentData } from '../providers/comment-data';
       AuthData, 
       ProfileData, 
       PostData,
-      CommentData
+      CommentData,
+      BookmarkData
   ]
 })
 export class AppModule {}

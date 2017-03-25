@@ -28,51 +28,6 @@
     </ion-refresher-content>
   </ion-refresher>
 
-<!--     <ion-list>
-    <ion-item-group>
-        <ion-item-sliding *ngFor="let post of postList">
-        <ion-item class="animated bounceInLeft">
-        <ion-item (click)="goToPostDetail(post.id)">
-            <ion-avatar item-left>
-                <img src="assets/img/girl_avatar.png"/>
-            </ion-avatar>
-            <h2>{{post?.name}}</h2>
-            <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
-            <p>{{post?.tag}}</p>
-            <p>{{post?.content}}</p>
-          </ion-item>
-            <ion-row>
-                <ion-col>
-                  <button ion-button icon-left clear small color="accent" >
-                    <ion-icon name="thumbs-up"></ion-icon>
-                    <div>12</div>
-                  </button>
-                </ion-col>
-                <ion-col>
-                  <button ion-button tappable icon-left clear small color="accent" (click)="goToComments()">
-                    <ion-icon name="text"></ion-icon>
-                    <div>4</div>
-                  </button>
-                </ion-col>
-                <ion-col center text-center>
-                  <ion-note>
-                    {{post?.dateCreated | date: 'shortTime' }}
-                  </ion-note>
-                </ion-col>
-            </ion-row>
-
-        </ion-item>
-            <ion-item-options>
-                <button ion-button icon-only (click)="addPostToFavorites(post.id)">
-                    <ion-icon name="star"></ion-icon>
-                </button>
-                <button ion-button icon-only (click)="deletePost(post.id)">
-                    <ion-icon name="trash"></ion-icon>
-                </button>
-            </ion-item-options>
-        </ion-item-sliding>   
-        </ion-item-group> 
-  </ion-list> -->
   <ion-list>
         <ion-item-group>        
         <ion-item-sliding *ngFor="let post of postList" >
@@ -82,10 +37,20 @@
                 <img src="assets/img/girl_avatar.png"/>
             </ion-avatar>
             <h3>{{post?.name}}</h3>
-            <p><strong>Category:</strong>&nbsp;{{post?.category}}</p>
+            <!-- <p><strong>Category:</strong>&nbsp;{{post?.category}}</p> -->
             <p>{{post?.tag}}</p>
-            <p>{{post?.content}}</p>
+            
+            <img *ngIf="post?.category == 'Information'" src="assets/icon/cat_icon_information_black.png" item-right width="24" />
+            <img *ngIf="post?.category == 'Campus'" src="assets/icon/cat_icon_campus_black.png" item-right width="24" />
+            <ion-icon *ngIf="post?.category == 'Explore'" name="pin" item-right></ion-icon>
+            <img *ngIf="post?.category == 'Clubs'" src="assets/icon/cat_icon_clubs_black.png" item-right width="24" />
+            <img *ngIf="post?.category == 'News'" src="assets/icon/cat_icon_news_black.png" item-right width="24" />
+            <img *ngIf="post?.category == 'Miscellaneous'" src="assets/icon/cat_icon_misc_black.png" item-right width="24" />
+            <img *ngIf="post?.category == 'Social'" src="assets/icon/cat_icon_social.png" item-right width="24" />
+
+            <!-- <p>{{post?.content}}</p> -->
         </ion-item>
+
             <ion-row class="postMeta">
                 <ion-col>
                   <button ion-button icon-left clear small color="accent">
@@ -94,7 +59,7 @@
                   </button>
                 </ion-col>
                 <ion-col>
-                  <button ion-button tappable icon-left clear small color="accent" (click)="goToComments()">
+                  <button ion-button tappable icon-left clear small color="accent" (click)="goToComments(post.id)">
                     <ion-icon name="text"></ion-icon>
                     <div>4</div>
                   </button>
@@ -103,8 +68,10 @@
                   <ion-note>
                      {{post?.dateCreated | date: 'shortTime' }}
                   </ion-note>
+
                 </ion-col>
             </ion-row>
+
         </ion-item>
             <ion-item-options>
                 <button ion-button icon-only (click)="addPostToFavorites(post.id)">

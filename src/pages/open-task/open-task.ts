@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, ToastController, AlertController, NavParams } from 'ionic-angular';
 import { ProfileData } from '../../providers/profile-data';
+import { BookmarkData } from '../../providers/bookmark-data';
+
+import { BookmarksPage } from '../bookmarks/bookmarks';
 
 /*
   Generated class for the OpenTask page.
@@ -16,31 +19,63 @@ export class OpenTaskPage {
 
     currentTask: any;
     task: any[];
+    checkboxDisabled: any;
 
 
-  constructor(public nav: NavController, public navParams: NavParams, public profileData: ProfileData) {
+  constructor(public nav: NavController, public navParams: NavParams, public profileData: ProfileData, 
+    public toastCtrl:ToastController, public alertCtrl:AlertController, public bookmarkData: BookmarkData) {
     this.navParams = navParams;
+    this.toastCtrl = toastCtrl;
+    this.alertCtrl = alertCtrl;
+    this.bookmarkData = bookmarkData;
+
     this.task = navParams.get('taskCategory');
     var taskid = this.navParams.get('taskId');
-    console.log(this.navParams.get('taskId'));
+    // console.log(this.navParams.get('taskId'));
     this.currentTask = this.task[taskid];
-    console.log(this.currentTask);
-    console.log(this.task[taskid]);
+    // console.log(this.currentTask);
+    // console.log(this.task[taskid]);
   }
 
   ionViewDidLoad() {
-    console.log('Hello OpenTaskPage Page');
+    //enabled true for user testing
+    this.checkboxDisabled = false;
   }
 
-  onSubmit(): void {
-    console.log('Submitted value: ');
-
-}
 
   updateCredits(credits: number) {
-    console.log("updating credits");
-  //this.favorites = firebase.database().ref('userProfile/' + this.currentUser + '/favorites' + postid);
-  //return this.favorites.set(true);
       this.profileData.updateCreditsOnProfile(credits);
+
+    let alert = this.alertCtrl.create({
+      title: "Save Bookmark",
+      message: "Do you want to bookmark this information?",
+
+      buttons: [
+        {
+          text: 'No',
+        },
+        {
+          text: 'Yes',
+          handler: () => {
+            this.createBookmark('Library', 'Opening Hours');
+          }
+        }
+      ]
+    });
+    alert.present();
+
+    this.checkboxDisabled = true;
+
+
     }
+
+
+    createBookmark(title: string, desc: string) {
+    this.bookmarkData.createBookmark(title, desc).then(() => {
+        this.nav.push(BookmarksPage);
+        
+    });
+}
+
+
 }
