@@ -65,11 +65,12 @@ export class ProfilePage {
     
     
     
-    this.postData.getPostList().on('value', snapshot => {
+    this.postData.getUserPostList().on('value', snapshot => {
         let rawList = [];
         snapshot.forEach( snap => {
             rawList.push({
                 id:snap.key,
+                
                 name: snap.val().name,
                 category: snap.val().category,
                 dateCreated: snap.val().dateCreated,

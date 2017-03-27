@@ -14,11 +14,17 @@ export class PostCreatePage {
     this.postData = postData;
   }
 
-createPost(postName: string, postCategory: string, dateCreated: string, postTag: string, postContent: string) {
-    this.postData.createPost(postName, postCategory, dateCreated, postTag, postContent).then(() => {
+// createPost(postName: string, postCategory: string, dateCreated: string, postTag: string, postContent: string) {
+//     this.postData.createPost(postName, postCategory, dateCreated, postTag, postContent).then(() => {
+//         this.nav.pop();
+//         //to go back to TabsPage
+//     });
+// }
+
+createPost(author: string, postName: string, postCategory: string, dateCreated: string, postTag: string, postContent: string) {
+    this.postData.createPost(author, postName, postCategory, dateCreated, postTag, postContent).then(() => {
         this.nav.pop();
         //to go back to TabsPage
     });
 }
-
 }

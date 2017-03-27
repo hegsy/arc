@@ -36,12 +36,30 @@ export class PostListPage {
     });
   }
 
-  getPosts(){
+  // getPosts(){
+  //   this.postData.getPostList().orderByChild("dateCreated").on('value', snapshot => {
+  //       let rawList = [];
+  //       snapshot.forEach( snap => {
+  //           rawList.push({
+  //               id:snap.key,
+  //               name: snap.val().name,
+  //               category: snap.val().category,
+  //               dateCreated: snap.val().dateCreated,
+  //               tag: snap.val().tag,
+  //               content: snap.val().content
+  //           });
+  //       });
+  //       this.postList = rawList;
+  //   });
+  // }
+
+    getPosts(){
     this.postData.getPostList().orderByChild("dateCreated").on('value', snapshot => {
         let rawList = [];
         snapshot.forEach( snap => {
             rawList.push({
                 id:snap.key,
+                author: snap.val().author,
                 name: snap.val().name,
                 category: snap.val().category,
                 dateCreated: snap.val().dateCreated,
